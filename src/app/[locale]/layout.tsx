@@ -4,6 +4,8 @@ import { routing } from '@/i18n/routing'
 
 import Header from '@/components/layout/header'
 
+import '@/styles/globals.scss'
+
 export default async function LocaleLayout({
   children,
   params,
