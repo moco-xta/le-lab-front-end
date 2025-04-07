@@ -9,6 +9,7 @@ import { default as glbConstants } from '@/constants/assets/glbConstants.json'
 
 interface ILogoMoco extends Partial<THREE.Group> {
   material: THREE.Material
+  onClick?: (event: ThreeEvent<PointerEvent>) => void
   onPointerMove?: (event: ThreeEvent<PointerEvent>) => void
   onPointerOut?: () => void
 }

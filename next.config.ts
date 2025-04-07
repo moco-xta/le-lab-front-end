@@ -14,8 +14,8 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   sassOptions: {
     includePaths: [path.join(__dirname, 'src/styles')],
-    prependData: `@use 'variables.module' as *;`
-  }
+    prependData: `@use 'variables.module' as *;`,
+  },
 }
 
 export default withBundleAnalyzer(withNextIntl(nextConfig))

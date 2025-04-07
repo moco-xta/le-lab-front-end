@@ -1,1 +1,14 @@
-$grey_dark: #515151;
+$max-width: 1600px;
+
+$base-padding-x: max(5vw, 40px);
+$base-padding-y: clamp(30px, 4vw, 50px);
+
+$white: #fff;
+$grey-lighter: #d8d8d8;
+$grey-light: #a8a8a8;
+$grey-medium: #7b7b7b;
+$grey-dark: #515151;
+$grey-darker: #292929;
+$black: #000;
+
+$anti-flash-white: #f0f1fa;

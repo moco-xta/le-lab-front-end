@@ -19,7 +19,10 @@ export default async function LocaleLayout({
   }
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html
+      lang={locale}
+      suppressHydrationWarning
+    >
       <body suppressHydrationWarning>
         <NextIntlClientProvider>
           <Header />
