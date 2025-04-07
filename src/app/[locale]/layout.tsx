@@ -2,6 +2,8 @@ import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 
+import ReduxProvider from '@/redux/ReduxProvider'
+
 import Header from '@/components/layout/header'
 
 import '@/styles/globals.scss'
@@ -24,10 +26,12 @@ export default async function LocaleLayout({
       suppressHydrationWarning
     >
       <body suppressHydrationWarning>
-        <NextIntlClientProvider>
-          <Header />
-          {children}
-        </NextIntlClientProvider>
+        <ReduxProvider>
+          <NextIntlClientProvider>
+            <Header />
+            {children}
+          </NextIntlClientProvider>
+        </ReduxProvider>
       </body>
     </html>
   )
