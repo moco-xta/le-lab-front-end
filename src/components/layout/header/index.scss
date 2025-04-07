@@ -8,12 +8,12 @@ header {
   justify-content: space-between;
 }
 
-#header_logo {
+#header-logo {
   left: 0;
   padding: $base-padding-y 0 0 $base-padding-x;
 }
 
-#header_buttons {
+#header-buttons {
   right: 0;
   padding: $base-padding-y $base-padding-x 0 0;
   display: flex;

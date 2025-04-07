@@ -1,3 +1,6 @@
 {
-  "HOME": "Home EN"
+  "BUTTONS": {
+    "MENU": "Menu",
+    "CLOSE": "Close"
+  }
 }

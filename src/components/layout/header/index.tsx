@@ -15,14 +15,14 @@ export default function Header() {
   return (
     <>
       <header
-        id='header_logo'
-        className='header_zIndex'
+        id='header-logo'
+        className='header-zIndex'
       >
         <LogoMocoCanvas logoMocoMaterial={getMatteMaterial(logoMocoData.material.color)} />
       </header>
       <header
-        id='header_buttons'
-        className='header_zIndex'
+        id='header-buttons'
+        className='header-zIndex'
       >
         <MenuButton />
       </header>

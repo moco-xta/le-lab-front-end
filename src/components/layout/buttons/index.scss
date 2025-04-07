@@ -1,0 +1,41 @@
+#menu-button {
+  height: 3.2em;
+  padding: 0 1.625em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.625em;
+  font-size: 0.875em;
+  font-weight: 600;
+  background-color: $light-grey;
+  border-radius: 6.25em;
+  border-width: initial;
+  overflow: hidden;
+  cursor: pointer;
+  transition:
+    color 0.4s,
+    background-color 0.4s;
+
+  #menu-button-menu-close-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625em;
+    background: transparent;
+    transform: translateY(31.5%);
+
+    #menu-button-menu {
+      opacity: 1;
+    }
+
+    #menu-button-close {
+      opacity: 0;
+    }
+  }
+}
+
+#menu-button:hover {
+  background-color: $white;
+}

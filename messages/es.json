@@ -1,3 +1,6 @@
 {
-  "HOME": "Home ES"
+  "BUTTONS": {
+    "MENU": "Menu",
+    "CLOSE": "Cerrar"
+  }
 }
