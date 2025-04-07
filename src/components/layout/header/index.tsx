@@ -3,6 +3,7 @@
 import React from 'react'
 
 import LogoMocoCanvas from '@/components/three/canvas/logo_moco/LogoMocoCanvas'
+import MenuButton from '../buttons'
 
 import { getMatteMaterial } from '@/components/three/materials'
 
@@ -18,6 +19,12 @@ export default function Header() {
         className='header_zIndex'
       >
         <LogoMocoCanvas logoMocoMaterial={getMatteMaterial(logoMocoData.material.color)} />
+      </header>
+      <header
+        id='header_buttons'
+        className='header_zIndex'
+      >
+        <MenuButton />
       </header>
     </>
   )
