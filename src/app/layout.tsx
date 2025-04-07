@@ -1,21 +1,5 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import { TRootLayout } from '@/types/routes/types'
 
-export const metadata: Metadata = {
-  title: "Moco's portfolio",
-  description: "",
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <body>
-        {children}
-      </body>
-    </html>
-  );
+export default function RootLayout({ children }: TRootLayout) {
+  return children
 }
