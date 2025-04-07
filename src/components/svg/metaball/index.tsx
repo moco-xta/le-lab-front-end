@@ -72,9 +72,10 @@ export default function Metaball() {
         0.25,
       )
       .to(
-        '#menu-button-ball-1',
+        '#menu-button-circle-1',
         {
           cx: 40,
+          cy: 40,
           duration: 0.25,
           ease: 'power1.out',
           delay: 0.1,
@@ -82,7 +83,7 @@ export default function Metaball() {
         0,
       )
       .to(
-        '#menu-button-ball-1',
+        '#menu-button-circle-1',
         {
           cx: 60,
           cy: 20,
@@ -93,7 +94,7 @@ export default function Metaball() {
         0.25,
       )
       .to(
-        '#menu-button-ball-2',
+        '#menu-button-circle-2',
         {
           cx: 20,
           cy: 60,
@@ -121,30 +122,33 @@ export default function Metaball() {
       >
         <circle
           id='menu-button-metaball-1'
+          className='menu-button-metaball'
           cx='15'
           cy='50'
           r={r}
         />
         <circle
-          id='menu-button-ball-1'
+          id='menu-button-circle-1'
           cx='40'
           cy='10'
           r={r}
         />
         <circle
           id='menu-button-metaball-2'
+          className='menu-button-metaball'
           cx='40'
           cy='70'
           r={r}
         />
         <circle
-          id='menu-button-ball-2'
+          id='menu-button-circle-2'
           cx='40'
           cy='40'
           r={r}
         />
         <circle
           id='menu-button-metaball-3'
+          className='menu-button-metaball'
           cx='65'
           cy='50'
           r={r}
