@@ -3,7 +3,6 @@
 :root {
   // --background: #ffffff;
   // --foreground: #171717;
-  --max-width: $max-width;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,7 +20,8 @@
 
 html,
 body {
-  max-width: var(--max-width);
+  max-width: $max-width;
+  margin: 0 auto;
   overflow-x: hidden;
   user-select: none;
 }
