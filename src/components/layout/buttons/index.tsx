@@ -12,6 +12,7 @@ import {
 } from '@/redux/slices/appStateSlice'
 
 import './index.scss'
+import Metaball from '@/components/svg/metaball'
 
 export default function MenuButton() {
   const t = useTranslations('BUTTONS')
@@ -103,7 +104,7 @@ export default function MenuButton() {
         <span id='menu-button-menu'>{t('MENU').toUpperCase()}</span>
         <span id='menu-button-close'>{t('CLOSE').toUpperCase()}</span>
       </div>
-      <span id='menu-button-dots'>Dots</span>
+      <Metaball />
     </button>
   )
 }
