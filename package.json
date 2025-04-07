@@ -20,10 +20,11 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
+    "eslint": "^8.57.1",
     "eslint-config-next": "15.2.4",
     "eslint-config-prettier": "^10.1.1",
     "prettier": "^3.5.3",
+    "rimraf": "^6.0.1",
     "typescript": "^5"
   }
 }
