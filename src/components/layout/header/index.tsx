@@ -8,7 +8,7 @@ import MenuButton from '../buttons/menu_button'
 
 import { getMatteMaterial } from '@/components/three/materials'
 
-import { logoMocoData } from '@/data/logo_moco/three/logoMocoData'
+import { logoMocoData } from '@/data/three/canvas/hero_canvas/logoMocoData'
 
 import './index.scss'
 

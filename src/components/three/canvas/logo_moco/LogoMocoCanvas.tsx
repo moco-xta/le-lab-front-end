@@ -6,12 +6,12 @@ import { PerspectiveCamera } from '@react-three/drei'
 
 import useHoverModelAnimation from '@/hooks/three/useHoverModelAnimation'
 
-import Lights from './Lights'
+import Lighting from './Lighting'
 import LogoMoco from '../../models/logos/LogoMoco'
 
-import { canvasDefaultValues } from '@/data/logo_moco/three/canvasData'
-import { cameraDefaultValues } from '@/data/logo_moco/three/cameraData'
-import { logoMocoData } from '@/data/logo_moco/three/logoMocoData'
+import { canvasDefaultValues } from '@/data/three/canvas/logo_moco_canvas/canvasData'
+import { cameraDefaultValues } from '@/data/three/canvas/logo_moco_canvas/cameraData'
+import { logoMocoData } from '@/data/three/canvas/hero_canvas/logoMocoData'
 
 export default function LogoMocoCanvas({ logoMocoMaterial }: { logoMocoMaterial: THREE.Material }) {
   const router = useRouter()
@@ -30,7 +30,7 @@ export default function LogoMocoCanvas({ logoMocoMaterial }: { logoMocoMaterial:
   return (
     <Canvas {...canvasDefaultValues}>
       <PerspectiveCamera {...cameraDefaultValues.camera} />
-      <Lights />
+      <Lighting />
       <Suspense fallback={null}>
         <LogoMoco
           ref={logoMocoRef}

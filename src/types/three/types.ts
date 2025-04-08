@@ -26,3 +26,9 @@ export interface IPerspectiveCameraData {
   near?: number
   far?: number
 }
+
+export interface ICoordinatesData {
+  x?: number
+  y?: number
+  z?: number
+}

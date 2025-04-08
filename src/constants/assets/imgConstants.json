@@ -2,6 +2,9 @@
   "ENVIRONMENTS": {
     "EXR": {
       "STUDIO_09_1K": "/img/environments/exr/studio_small_09_1k.exr"
+    },
+    "HDR": {
+      "PEPPERMINT_POWERPLANT_2_1K": "/img/environments/hdr/peppermint_powerplant_2_1k.hdr"
     }
   }
 }

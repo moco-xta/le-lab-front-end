@@ -8,4 +8,11 @@
   grid-template-columns: repeat(12, minmax(0, 1fr));
   grid-gap: 20px;
   align-content: flex-start;
+
+  #hero_canvas {
+    grid-column: 1 / span 12;
+    grid-row: 3 / span 9;
+    border-radius: 20px;
+    background: $void_black;
+  }
 }

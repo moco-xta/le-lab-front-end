@@ -8,3 +8,15 @@ export const getMatteMaterial = (color: string) => {
     sheen: 0.2,
   })
 }
+
+export const heliumBalloonMaterial = new THREE.MeshPhysicalMaterial({
+  color: '#888888',
+  metalness: 1,
+  roughness: 0.075,
+  reflectivity: 10,
+})
+
+export const wrapperMaterial = new THREE.MeshStandardMaterial({
+  transparent: true,
+  opacity: 0,
+})

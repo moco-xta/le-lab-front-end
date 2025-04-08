@@ -1,4 +1,10 @@
 {
+  "HERO": {
+    "C_HELIUM_BALLOON": "/models/glb/hero/CHeliumBalloon.glb",
+    "M_HELIUM_BALLOON": "/models/glb/hero/MHeliumBalloon.glb",
+    "O_HELIUM_BALLOON": "/models/glb/hero/OHeliumBalloon.glb",
+    "SMILEY": "/models/glb/hero/Smiley.glb"
+  },
   "LOGOS": {
     "LOGO_MOCO": "/models/glb/logos/LogoMoco.glb"
   }
