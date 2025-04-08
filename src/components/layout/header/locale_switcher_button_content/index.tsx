@@ -3,18 +3,16 @@
 import React from 'react'
 
 import LocaleSwitcherOptions from './locale_switcher_options'
-import Menu from './menu'
 
 import './index.scss'
 
-export default function HeaderButtonsContent() {
+export default function LocaleSwitcherButtonContent() {
   return (
     <header
-      id='header-buttons-content'
-      className='header-buttons-content-zIndex'
+      id='locale-switcher-button-content'
+      className='locale-switcher-button-content-zIndex'
     >
       <LocaleSwitcherOptions />
-      <Menu />
     </header>
   )
 }

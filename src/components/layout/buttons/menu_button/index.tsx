@@ -30,12 +30,10 @@ export default function MenuButton() {
   useGSAP(() => {
     timelineRef.current
       .to(
-        '#header-buttons-content',
+        '#menu-button-content',
         {
           translateX: 0,
           duration: 0,
-          ease: 'none',
-          onComplete: () => handleOnMouseEnter(),
         },
         0,
       )

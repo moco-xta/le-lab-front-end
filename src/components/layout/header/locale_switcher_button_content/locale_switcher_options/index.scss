@@ -1,0 +1,29 @@
+#locale-switcher-options {
+  position: absolute;
+  margin-top: $gap_XS;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.325em;
+
+  .locale-option {
+    width: fit-content;
+    padding: 0.725em 1.3em 0.625em 1.3em;
+    font-size: 0.875em;
+    font-weight: 500;
+    color: $white;
+    background-color: $void_black;
+    opacity: 0;
+    border-radius: 25px;
+    cursor: pointer;
+    list-style: none;
+    transform: rotateZ(5deg) translateX(-5px) translateY(20px) translateZ(100px) scale(1.15);
+    transform-style: preserve-3d;
+    will-change: transform, opacity;
+  }
+
+  .locale-option:hover {
+    background-color: $bright_lavender;
+  }
+}

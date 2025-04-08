@@ -1,14 +1,15 @@
 #locale-switcher-button-container {
   #locale-switcher-button-wrapper {
     padding: 0 0.65em 0 1.3em;
-    background-color: $void_black;
     border-radius: 3.25em;
     border-width: initial;
+    background-color: $void_black;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    transition: background-color 0.4s;
 
     #locale-switcher-button {
       height: 3.2em;
-      margin-top: 2px;
+      padding-top: 2px;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -32,5 +33,6 @@
 
   #locale-switcher-button-wrapper:hover {
     background-color: $bright_lavender;
+    transition: background-color 0.4s;
   }
 }

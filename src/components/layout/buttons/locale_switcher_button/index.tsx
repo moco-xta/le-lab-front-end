@@ -22,12 +22,12 @@ export default function LocaleSwitcherButton() {
 
   const { menu, localeSwitcher } = useSelector((state: RootState) => state.appState)
 
-  const localeSwitcherButtonRef = useRef<HTMLButtonElement>(null!)
+  const localeSwitcherButtonContainerRef = useRef<HTMLDivElement>(null!)
   const buttonTimelineRef = useRef<GSAPTimeline>(gsap.timeline({ paused: true }))
   const contentTimelineRef = useRef<GSAPTimeline>(gsap.timeline({ paused: true }))
 
   const handleResize = useCallback(() => {
-    const rect = localeSwitcherButtonRef.current.getBoundingClientRect()
+    const rect = localeSwitcherButtonContainerRef.current.getBoundingClientRect()
 
     dispatch(
       setLocalSwitcherContentPosition({
@@ -39,8 +39,8 @@ export default function LocaleSwitcherButton() {
   }, [dispatch])
 
   useEffect(() => {
-    if (localeSwitcherButtonRef.current) handleResize()
-  }, [dispatch, handleResize, localeSwitcherButtonRef])
+    if (localeSwitcherButtonContainerRef.current) handleResize()
+  }, [dispatch, handleResize, localeSwitcherButtonContainerRef])
 
   useEffect(() => {
     handleResize()
@@ -58,7 +58,7 @@ export default function LocaleSwitcherButton() {
         {
           translateX: '0.425em',
           duration: 0.25,
-          ease: 'power1.out',
+          ease: 'expo.out',
         },
         0,
       )
@@ -84,19 +84,24 @@ export default function LocaleSwitcherButton() {
 
     contentTimelineRef.current
       .to(
-        '#header-buttons-content',
+        '#locale-switcher-button-content',
         {
           translateX: 0,
           duration: 0,
-          ease: 'none',
         },
         0,
       )
       .to('.locale-option', {
+        translateX: 0,
+        translateY: 0,
+        translateZ: 0,
+        rotateZ: 0,
+        scale: 1,
         opacity: 1,
         duration: 0.25,
         ease: 'power1.out',
         stagger: 0.05,
+        delay: 0.1,
       })
       .to(
         '#locale-switcher-arrow-icon',
@@ -105,6 +110,7 @@ export default function LocaleSwitcherButton() {
           marginTop: 0,
           duration: 0.25,
           ease: 'power1.out',
+          delay: 0.1,
         },
         0,
       )
@@ -132,16 +138,14 @@ export default function LocaleSwitcherButton() {
 
   return (
     <div
+      ref={localeSwitcherButtonContainerRef}
       id='locale-switcher-button-container'
       onClick={handleOnClick}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <div id='locale-switcher-button-wrapper'>
-        <button
-          ref={localeSwitcherButtonRef}
-          id='locale-switcher-button'
-        >
+        <button id='locale-switcher-button'>
           <FaArrowRight
             id='locale-switcher-arrow-icon'
             size={12}

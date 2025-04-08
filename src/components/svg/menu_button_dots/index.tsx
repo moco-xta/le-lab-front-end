@@ -42,14 +42,14 @@ export default function MenuButtonDots() {
         <circle
           id='menu-button-dot-1'
           cx='20'
-          cy='20'
-          r={12}
+          cy='15'
+          r={15}
         />
         <circle
           id='menu-button-dot-2'
           cx='20'
-          cy='60'
-          r={12}
+          cy='65'
+          r={15}
         />
       </svg>
     </div>
