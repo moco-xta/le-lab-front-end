@@ -6,9 +6,9 @@
   "HOME": {
     "HERO": {
       "TEXT": {
-        "LINE_1": "Lorem ipsum dolor sit amet",
-        "LINE_2": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        "LINE_3": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        "LINE_1": "",
+        "LINE_2": "",
+        "LINE_3": ""
       }
     }
   },

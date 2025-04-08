@@ -8,4 +8,16 @@
   line-height: 1.1;
   font-size: 2vw;
   margin: 0;
+
+  .hero-heading-line-wrapper {
+    display: block;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 150%, 0% 150%);
+
+    .hero-heading-line {
+      opacity: 0;
+      transform-origin: top left;
+      transform: translateY(100%) rotateZ(5deg);
+      will-change: transform, opacity;
+    }
+  }
 }
