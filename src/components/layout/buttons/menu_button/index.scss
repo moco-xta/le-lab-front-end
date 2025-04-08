@@ -5,9 +5,7 @@
   flex-direction: row;
   align-items: center;
   gap: 0.625em;
-  font-size: 0.875em;
-  font-weight: 600;
-  background-color: $light-grey;
+  font-size: 1em;
   border-radius: 6.25em;
   border-width: initial;
   overflow: hidden;
@@ -34,8 +32,4 @@
       opacity: 0;
     }
   }
-}
-
-#menu-button:hover {
-  background-color: $white;
 }

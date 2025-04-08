@@ -3,7 +3,7 @@
 import React from 'react'
 
 import LogoMocoCanvas from '@/components/three/canvas/logo_moco/LogoMocoCanvas'
-import MenuButton from '../buttons'
+import MenuButton from '../buttons/menu_button'
 
 import { getMatteMaterial } from '@/components/three/materials'
 

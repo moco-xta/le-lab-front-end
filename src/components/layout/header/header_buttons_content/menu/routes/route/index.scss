@@ -1,0 +1,54 @@
+.route-wrapper {
+  min-height: 40px;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+
+  .route-container {
+    z-index: 1;
+    position: absolute;
+    clip-path: polygon(0% 25%, 100% 25%, 100% 75%, 0% 75%);
+
+    .route {
+      padding-top: 3px;
+      padding-left: 15px;
+      display: block;
+      color: $black;
+      transform: translateY(0.5rem);
+
+      .route-character {
+        display: inline-block;
+      }
+    }
+  }
+
+  .route-background {
+    z-index: 0;
+    position: absolute;
+    width: 95%;
+    height: 40px;
+    border-radius: 20px;
+    background-color: $white;
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  .route-dot-icon {
+    z-index: 0;
+    position: absolute;
+    right: 15px;
+    margin-top: -7px;
+    color: $black;
+  }
+
+  .route-arrow-icon {
+    z-index: 0;
+    position: absolute;
+    right: 30px;
+    margin-top: -2px;
+    color: $black;
+    opacity: 0;
+    transform: scale(0);
+  }
+}

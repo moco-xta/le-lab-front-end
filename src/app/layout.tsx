@@ -1,5 +1,5 @@
-import { TRootLayout } from '@/types/routes/types'
+import { IRootLayout } from '@/types/routes/types'
 
-export default function RootLayout({ children }: TRootLayout) {
+export default function RootLayout({ children }: IRootLayout) {
   return children
 }

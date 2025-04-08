@@ -5,6 +5,7 @@ import { routing } from '@/i18n/routing'
 import ReduxProvider from '@/redux/ReduxProvider'
 
 import Header from '@/components/layout/header'
+import HeaderButtonsContent from '@/components/layout/header/header_buttons_content'
 
 import '@/styles/globals.scss'
 
@@ -29,6 +30,7 @@ export default async function LocaleLayout({
         <ReduxProvider>
           <NextIntlClientProvider>
             <Header />
+            <HeaderButtonsContent />
             {children}
           </NextIntlClientProvider>
         </ReduxProvider>

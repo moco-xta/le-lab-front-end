@@ -52,8 +52,12 @@ button {
 
 // Z-INDEXES
 
-.header_zIndex {
+.header-zIndex {
   z-index: 10;
+}
+
+.header-buttons-content-zIndex {
+  z-index: 9;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -2,5 +2,15 @@
   "BUTTONS": {
     "MENU": "MENU",
     "CLOSE": "FERMER"
+  },
+  "ROUTES": {
+    "ABOUT": "a propos",
+    "COLORS": "couleurs",
+    "CONTACT": "contact",
+    "HOME": "home",
+    "PHOTOGRAPHY": "photographie",
+    "PROJECTS": "projets",
+    "RESOURCES": "ressources",
+    "SKILLS": "competences"
   }
 }

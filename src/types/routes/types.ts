@@ -1,5 +1,11 @@
 import { ReactNode } from 'react'
 
-export type TRootLayout = {
+export interface IRootLayout {
   children: ReactNode
+}
+
+export interface IRouteData {
+  index?: number
+  translationKey: string
+  path: string
 }

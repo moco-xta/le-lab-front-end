@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
@@ -11,14 +11,17 @@ import {
   toggleMenu,
 } from '@/redux/slices/appStateSlice'
 
-import './index.scss'
 import Metaball from '@/components/svg/metaball'
+
+import './index.scss'
 
 export default function MenuButton() {
   const t = useTranslations('BUTTONS')
   const dispatch = useDispatch<AppDispatch>()
 
   const { menu, localeSwitcher } = useSelector((state: RootState) => state.appState)
+
+  const [isMenuButtonHovered, setIsMenuButtonHovered] = useState(false)
 
   const handleOnClick = () => {
     dispatch(toggleMenu())
@@ -30,6 +33,39 @@ export default function MenuButton() {
 
   useGSAP(() => {
     timelineRef.current
+      .to(
+        '#header-buttons-content',
+        {
+          translateX: 0,
+          duration: 0,
+          ease: 'none',
+        },
+        0,
+      )
+      .to(
+        '#routes',
+        {
+          translateX: 0,
+          translateY: 0,
+          translateZ: 0,
+          rotateZ: 0,
+          scale: 1,
+          opacity: 1,
+          duration: 0.25,
+          ease: 'power1.out',
+          delay: 0.1,
+        },
+        0,
+      )
+      .to(
+        '#menu-button',
+        {
+          backgroundColor: 'var(--white)',
+          duration: 0,
+          ease: 'power1.out',
+        },
+        0,
+      )
       .to(
         '#menu-button-menu-close-container',
         {
@@ -98,7 +134,12 @@ export default function MenuButton() {
     <button
       ref={menuButtonRef}
       id='menu-button'
+      style={{
+        backgroundColor: isMenuButtonHovered && !menu.isOpen ? 'var(--white)' : 'var(--light-grey)',
+      }}
       onClick={handleOnClick}
+      onMouseEnter={() => setIsMenuButtonHovered(true)}
+      onMouseLeave={() => setIsMenuButtonHovered(false)}
     >
       <div id='menu-button-menu-close-container'>
         <span id='menu-button-menu'>{t('MENU').toUpperCase()}</span>

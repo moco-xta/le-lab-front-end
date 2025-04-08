@@ -11,5 +11,5 @@ gsap.registerPlugin(ScrollTrigger)
 export default function HomePage() {
   const t = useTranslations()
 
-  return <div></div>
+  return <div>Home</div>
 }
