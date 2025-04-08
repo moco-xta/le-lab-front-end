@@ -13,11 +13,18 @@ export default function Metaball() {
   const { menu } = useSelector((state: RootState) => state.appState)
 
   const timelineRef = useRef<GSAPTimeline>(gsap.timeline({ paused: true }))
+  const metaball1Ref = useRef<SVGCircleElement>(null)
+  const metaball2Ref = useRef<SVGCircleElement>(null)
+  const metaball3Ref = useRef<SVGCircleElement>(null)
+
+  useEffect(() => {
+    console.log('metaball1Ref', metaball1Ref.current)
+  }, [metaball1Ref.current])
 
   useGSAP(() => {
     timelineRef.current
       .to(
-        '#menu-button-metaball-1',
+        metaball1Ref.current,
         {
           cx: 40,
           cy: 40,
@@ -28,7 +35,7 @@ export default function Metaball() {
         0,
       )
       .to(
-        '#menu-button-metaball-1',
+        metaball1Ref.current,
         {
           cx: 20,
           cy: 20,
@@ -39,7 +46,7 @@ export default function Metaball() {
         0.25,
       )
       .to(
-        '#menu-button-metaball-2',
+        metaball2Ref.current,
         {
           cx: 40,
           cy: 40,
@@ -50,7 +57,7 @@ export default function Metaball() {
         0,
       )
       .to(
-        '#menu-button-metaball-3',
+        metaball3Ref.current,
         {
           cx: 40,
           cy: 40,
@@ -61,7 +68,7 @@ export default function Metaball() {
         0,
       )
       .to(
-        '#menu-button-metaball-3',
+        metaball3Ref.current,
         {
           cx: 60,
           cy: 60,
@@ -121,6 +128,7 @@ export default function Metaball() {
         xmlns='http://www.w3.org/2000/svg'
       >
         <circle
+          ref={metaball1Ref}
           id='menu-button-metaball-1'
           className='menu-button-metaball'
           cx='15'
@@ -134,6 +142,7 @@ export default function Metaball() {
           r={r}
         />
         <circle
+          ref={metaball2Ref}
           id='menu-button-metaball-2'
           className='menu-button-metaball'
           cx='40'
@@ -147,6 +156,7 @@ export default function Metaball() {
           r={r}
         />
         <circle
+          ref={metaball3Ref}
           id='menu-button-metaball-3'
           className='menu-button-metaball'
           cx='65'
