@@ -1,36 +1,36 @@
 #locale-switcher-button-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  #locale-switcher-arrow-icon {
-    margin-top: -2px;
-    margin-right: -11px;
-    color: $white;
-    opacity: 0;
-  }
-
-  #locale-switcher-button {
-    height: 3.2em;
-    padding: 0.125em 1.2em 0px 1.225em;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-    gap: $gap_XXS;
-    font-size: 0.875em;
-    font-weight: 900;
-    color: $white;
+  #locale-switcher-button-wrapper {
+    padding: 0 0.65em 0 1.3em;
     background-color: $void_black;
-    border-radius: 6.25em;
-    transition: all 0.4s;
+    border-radius: 3.25em;
+    border-width: initial;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 
-    #locale-switcher-translation-icon {
-      transform: scale(1);
+    #locale-switcher-button {
+      height: 3.2em;
+      margin-top: 2px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.625em;
+      font-weight: 500;
+      color: $white;
+      transform: translateX(-1em);
+
+      #locale-switcher-arrow-icon {
+        margin-top: -3px;
+        color: $white;
+        opacity: 0;
+      }
+
+      #locale-switcher-translation-icon {
+        margin-top: -2px;
+        transform: scale(1);
+      }
     }
   }
 
-  #locale-switcher-button:hover {
+  #locale-switcher-button-wrapper:hover {
     background-color: $bright_lavender;
   }
 }

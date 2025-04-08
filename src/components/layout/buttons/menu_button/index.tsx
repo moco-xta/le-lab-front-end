@@ -11,7 +11,8 @@ import {
   toggleMenu,
 } from '@/redux/slices/appStateSlice'
 
-import Metaball from '@/components/svg/metaball'
+import MenuButtonDots from '@/components/svg/menu_button_dots'
+// import Metaball from '@/components/svg/metaball'
 
 import './index.scss'
 
@@ -22,11 +23,6 @@ export default function MenuButton() {
   const { menu, localeSwitcher } = useSelector((state: RootState) => state.appState)
 
   const [isMenuButtonHovered, setIsMenuButtonHovered] = useState(false)
-
-  const handleOnClick = () => {
-    dispatch(toggleMenu())
-    if (localeSwitcher.isOpen) dispatch(toggleLocaleSwitcher())
-  }
 
   const timelineRef = useRef<GSAPTimeline>(gsap.timeline({ paused: true }))
   const menuButtonRef = useRef<HTMLButtonElement>(null!)
@@ -122,6 +118,11 @@ export default function MenuButton() {
     }
   }, [menu.isOpen])
 
+  const handleOnClick = () => {
+    dispatch(toggleMenu())
+    if (localeSwitcher.isOpen) dispatch(toggleLocaleSwitcher())
+  }
+
   const handleOnMouseEnter = () => {
     setIsMenuButtonHovered(true)
   }
@@ -169,7 +170,8 @@ export default function MenuButton() {
         <span id='menu-button-menu'>{t('MENU').toUpperCase()}</span>
         <span id='menu-button-close'>{t('CLOSE').toUpperCase()}</span>
       </div>
-      <Metaball />
+      <MenuButtonDots />
+      {/* <Metaball /> */}
     </button>
   )
 }

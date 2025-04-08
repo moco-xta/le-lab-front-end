@@ -53,27 +53,29 @@ export default function LocaleSwitcherButton() {
 
   useGSAP(() => {
     buttonTimelineRef.current
-      .to('#locale-switcher-translation-icon', {
-        scale: 0,
-        opacity: 0,
-        duration: 0.25,
-        ease: 'power1.out',
-      })
       .to(
-        '#locale-switcher-arrow-icon',
+        '#locale-switcher-button',
         {
-          translateX: '15px',
-          color: 'white',
-          opacity: 1,
+          translateX: '0.425em',
           duration: 0.25,
           ease: 'power1.out',
         },
         0,
       )
       .to(
-        '#locale-switcher-text',
+        '#locale-switcher-translation-icon',
         {
-          translateX: '15px',
+          scale: 0,
+          opacity: 0,
+          duration: 0.25,
+          ease: 'power1.out',
+        },
+        0,
+      )
+      .to(
+        '#locale-switcher-arrow-icon',
+        {
+          opacity: 1,
           duration: 0.25,
           ease: 'power1.out',
         },
@@ -135,17 +137,22 @@ export default function LocaleSwitcherButton() {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <FaArrowRight
-        id='locale-switcher-arrow-icon'
-        size={10}
-      />
-      <button
-        ref={localeSwitcherButtonRef}
-        id='locale-switcher-button'
-      >
-        <span id='locale-switcher-text'>{t(locale.toUpperCase()).toUpperCase()}</span>
-        <RiTranslate2 id='locale-switcher-translation-icon' />
-      </button>
+      <div id='locale-switcher-button-wrapper'>
+        <button
+          ref={localeSwitcherButtonRef}
+          id='locale-switcher-button'
+        >
+          <FaArrowRight
+            id='locale-switcher-arrow-icon'
+            size={12}
+          />
+          <span id='locale-switcher-button-text'>{t(locale.toUpperCase()).toUpperCase()}</span>
+          <RiTranslate2
+            id='locale-switcher-translation-icon'
+            size={15}
+          />
+        </button>
+      </div>
     </div>
   )
 }
