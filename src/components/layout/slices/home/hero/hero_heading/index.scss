@@ -1,0 +1,11 @@
+#hero-heading {
+  position: relative;
+  grid-column: 3 / span 7;
+  grid-row: 1 / span 2;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  font-size: 2vw;
+  margin: 0;
+}

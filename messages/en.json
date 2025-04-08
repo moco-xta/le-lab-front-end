@@ -3,6 +3,15 @@
     "MENU": "Menu",
     "CLOSE": "Close"
   },
+  "HOME": {
+    "HERO": {
+      "TEXT": {
+        "LINE_1": "Full-stack developer crafting immersive ",
+        "LINE_2": "web experiences with real-time 3D.",
+        "LINE_3": "Code, creativity, and performance in perfect sync."
+      }
+    }
+  },
   "LOCALES": {
     "EN": "English",
     "ES": "Español",

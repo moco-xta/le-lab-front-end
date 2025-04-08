@@ -3,6 +3,15 @@
     "MENU": "MENU",
     "CLOSE": "FERMER"
   },
+  "HOME": {
+    "HERO": {
+      "TEXT": {
+        "LINE_1": "Lorem ipsum dolor sit amet",
+        "LINE_2": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        "LINE_3": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+      }
+    }
+  },
   "LOCALES": {
     "EN": "English",
     "ES": "Español",
