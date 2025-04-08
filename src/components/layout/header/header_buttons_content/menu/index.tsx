@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import { RootState } from '@/redux/store'
 
 import Routes from './routes'
+import Socials from './socials'
 
 import './index.scss'
 
@@ -19,6 +20,7 @@ export default function Menu() {
       }}
     >
       <Routes />
+      <Socials />
     </div>
   )
 }

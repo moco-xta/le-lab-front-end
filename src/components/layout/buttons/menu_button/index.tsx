@@ -58,6 +58,21 @@ export default function MenuButton() {
         0,
       )
       .to(
+        '#socials-container',
+        {
+          translateX: 0,
+          translateY: 0,
+          translateZ: 0,
+          rotateZ: 0,
+          scale: 1,
+          opacity: 1,
+          duration: 0.25,
+          ease: 'power1.out',
+          delay: 0.1,
+        },
+        0,
+      )
+      .to(
         '#menu-button',
         {
           backgroundColor: 'var(--white)',

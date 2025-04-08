@@ -68,7 +68,7 @@ export default function Route({ route }: { route: IRouteData }) {
         {
           backgroundColor: 'var(--bright-lavender)',
           scale: 1,
-          opacity: 1,
+          opacity: 0.5,
           duration: timelineRef.current.reversed() ? 0.05 : 0.25,
           ease: 'power1.out',
         },
