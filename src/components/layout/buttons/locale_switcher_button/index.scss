@@ -1,0 +1,36 @@
+#locale-switcher-button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  #locale-switcher-arrow-icon {
+    margin-top: -2px;
+    margin-right: -11px;
+    color: $white;
+    opacity: 0;
+  }
+
+  #locale-switcher-button {
+    height: 3.2em;
+    padding: 0.125em 1.2em 0px 1.225em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: $gap_XXS;
+    font-size: 0.875em;
+    font-weight: 900;
+    color: $white;
+    background-color: $void_black;
+    border-radius: 6.25em;
+    transition: all 0.4s;
+
+    #locale-switcher-translation-icon {
+      transform: scale(1);
+    }
+  }
+
+  #locale-switcher-button:hover {
+    background-color: $bright_lavender;
+  }
+}

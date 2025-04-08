@@ -1,0 +1,30 @@
+#locale-switcher-options {
+  position: absolute;
+  margin-top: $gap_XS;
+
+  .locale-option {
+    padding: 1.125em;
+    font-size: 0.75em;
+    font-weight: 900;
+    color: $white;
+    cursor: pointer;
+    background-color: $void_black;
+    opacity: 0;
+    // TODO: final animation
+  }
+
+  .locale-option:hover {
+    background-color: $bright_lavender;
+  }
+
+  .locale-option:first-child {
+    padding-top: 1.25em;
+    padding-bottom: 0.8em;
+    border-radius: 15px 15px 0 0;
+  }
+
+  .locale-option:last-child {
+    padding-top: 0.9em;
+    border-radius: 0 0 15px 15px;
+  }
+}

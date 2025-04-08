@@ -39,6 +39,7 @@ export default function MenuButton() {
           translateX: 0,
           duration: 0,
           ease: 'none',
+          onComplete: () => handleOnMouseEnter(),
         },
         0,
       )
@@ -121,6 +122,14 @@ export default function MenuButton() {
     }
   }, [menu.isOpen])
 
+  const handleOnMouseEnter = () => {
+    setIsMenuButtonHovered(true)
+  }
+
+  const handleOnMouseLeave = () => {
+    setIsMenuButtonHovered(false)
+  }
+
   const handleResize = useCallback(() => {
     const rect = menuButtonRef.current.getBoundingClientRect()
 
@@ -153,8 +162,8 @@ export default function MenuButton() {
         backgroundColor: isMenuButtonHovered && !menu.isOpen ? 'var(--white)' : 'var(--light-grey)',
       }}
       onClick={handleOnClick}
-      onMouseEnter={() => setIsMenuButtonHovered(true)}
-      onMouseLeave={() => setIsMenuButtonHovered(false)}
+      onMouseEnter={handleOnMouseEnter}
+      onMouseLeave={handleOnMouseLeave}
     >
       <div id='menu-button-menu-close-container'>
         <span id='menu-button-menu'>{t('MENU').toUpperCase()}</span>

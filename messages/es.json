@@ -3,6 +3,11 @@
     "MENU": "Menu",
     "CLOSE": "Cerrar"
   },
+  "LOCALES": {
+    "EN": "English",
+    "ES": "Español",
+    "FR": "Français"
+  },
   "ROUTES": {
     "ABOUT": "a proposito",
     "COLORS": "colores",
