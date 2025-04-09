@@ -56,18 +56,17 @@
 
 @media (max-width: $breakpoint_S) {
   .route-wrapper {
-    min-height: 4.55em;
+    min-height: 4em;
 
     .route-container {
       .route-wrapper {
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 
         .route {
-          padding: 0;
+          padding: 0 !important;
           display: block;
           font-size: 4.5em;
-          background-color: red;
-          transform: translateY(50%) rotate(5deg);
+          line-height: 2;
           transform-origin: top left;
           will-change: transform, background-color;
         }

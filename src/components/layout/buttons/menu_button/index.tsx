@@ -28,82 +28,12 @@ export default function MenuButton({ isSmallScreen }: { isSmallScreen: boolean }
   const menuButtonRef = useRef<HTMLButtonElement>(null!)
 
   useGSAP(() => {
-    /* if (!isSmallScreen) { */
     timelineRef.current
       .to(
         '#menu-button-content',
         {
           translateX: 0,
           duration: 0,
-        },
-        0,
-      )
-      .to(
-        '#routes',
-        {
-          translateX: 0,
-          translateY: 0,
-          translateZ: 0,
-          rotateZ: 0,
-          scale: 1,
-          opacity: 1,
-          duration: 0.25,
-          ease: 'power1.out',
-          delay: 0.1,
-        },
-        0,
-      )
-      .to(
-        '#socials-container',
-        {
-          translateX: 0,
-          translateY: 0,
-          translateZ: 0,
-          rotateZ: 0,
-          scale: 1,
-          opacity: 1,
-          duration: 0.25,
-          ease: 'power1.out',
-          delay: 0.1,
-        },
-        0,
-      )
-      .to(
-        '#menu-button',
-        {
-          backgroundColor: 'var(--white)',
-          duration: 0,
-          ease: 'power1.out',
-        },
-        0,
-      )
-      .to(
-        '#menu-button-menu-close-container',
-        {
-          translateY: '-30%',
-          duration: 0.25,
-          ease: 'power1.out',
-          delay: 0.1,
-        },
-        0,
-      )
-      .to(
-        '#menu-button-menu',
-        {
-          opacity: 0,
-          duration: 0.25,
-          ease: 'power1.out',
-          delay: 0.1,
-        },
-        0,
-      )
-      .to(
-        '#menu-button-close',
-        {
-          opacity: 1,
-          duration: 0.25,
-          ease: 'power1.out',
-          delay: 0.1,
         },
         0,
       )
@@ -117,18 +47,79 @@ export default function MenuButton({ isSmallScreen }: { isSmallScreen: boolean }
         },
         0,
       )
-      .to(
-        '.route',
-        {
-          translateY: 0,
-          duration: 0.15,
-          ease: 'power1.out',
-          stagger: {
-            each: 0.025,
+
+    if (!isSmallScreen) {
+      timelineRef.current
+        .to(
+          '#routes',
+          {
+            translateX: 0,
+            translateY: 0,
+            translateZ: 0,
+            rotateZ: 0,
+            scale: 1,
+            opacity: 1,
+            duration: 0.25,
+            ease: 'power1.out',
+            delay: 0.1,
           },
-        },
-        0,
-      )
+          0,
+        )
+        .to(
+          '#socials-container',
+          {
+            translateX: 0,
+            translateY: 0,
+            translateZ: 0,
+            rotateZ: 0,
+            scale: 1,
+            opacity: 1,
+            duration: 0.25,
+            ease: 'power1.out',
+            delay: 0.1,
+          },
+          0,
+        )
+        .to(
+          '#menu-button',
+          {
+            backgroundColor: 'var(--white)',
+            duration: 0,
+            ease: 'power1.out',
+          },
+          0,
+        )
+        .to(
+          '#menu-button-menu-close-container',
+          {
+            translateY: '-30%',
+            duration: 0.25,
+            ease: 'power1.out',
+            delay: 0.1,
+          },
+          0,
+        )
+        .to(
+          '#menu-button-menu',
+          {
+            opacity: 0,
+            duration: 0.25,
+            ease: 'power1.out',
+            delay: 0.1,
+          },
+          0,
+        )
+        .to(
+          '#menu-button-close',
+          {
+            opacity: 1,
+            duration: 0.25,
+            ease: 'power1.out',
+            delay: 0.1,
+          },
+          0,
+        )
+    }
   })
 
   useEffect(() => {

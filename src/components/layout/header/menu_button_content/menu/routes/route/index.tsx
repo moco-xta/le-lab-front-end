@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { useTranslations } from 'next-intl'
@@ -10,7 +10,7 @@ import type { IRouteData } from '@/types/routes/types'
 
 import { Link, usePathname } from '@/i18n/routing'
 
-import { AppDispatch } from '@/redux/store'
+import { AppDispatch, RootState } from '@/redux/store'
 import { toggleMenu } from '@/redux/slices/appStateSlice'
 
 import { splitTextToCharacters } from '@/helpers/textHelpers'
@@ -27,6 +27,8 @@ export default function Route({
   const t = useTranslations('ROUTES')
   const pathname = usePathname()
   const dispatch = useDispatch<AppDispatch>()
+
+  const { menu } = useSelector((state: RootState) => state.appState)
 
   const [isActiveRoute, setIsActiveRoute] = useState(pathname === route.path)
 
@@ -94,6 +96,29 @@ export default function Route({
         )
     }
   })
+
+  useEffect(() => {
+    if (isSmallScreen) {
+      if (menu.isOpen) {
+        gsap.fromTo(
+          '.route',
+          {
+            translateY: '50%',
+            rotate: '5deg',
+          },
+          {
+            translateY: 0,
+            rotate: '0deg',
+            duration: 0.35,
+            ease: 'power1.out',
+            stagger: {
+              each: 0.05,
+            },
+          },
+        )
+      }
+    }
+  }, [menu.isOpen, isSmallScreen])
 
   return (
     <Link
