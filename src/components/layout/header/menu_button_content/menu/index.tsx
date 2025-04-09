@@ -6,6 +6,7 @@ import useIsSmallScreen from '@/hooks/useIsSmallScreen'
 
 import Routes from './routes'
 import Socials from './socials'
+import RollingLocales from '@/components/layout/buttons/rolling_locales'
 
 import './index.scss'
 
@@ -24,6 +25,7 @@ export default function Menu() {
     >
       <Routes isSmallScreen={isSmallScreen} />
       <Socials isSmallScreen={isSmallScreen} />
+      {isSmallScreen && <RollingLocales />}
     </div>
   )
 }
