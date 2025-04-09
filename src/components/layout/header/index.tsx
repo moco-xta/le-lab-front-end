@@ -18,20 +18,20 @@ export default function Header() {
   const isSmallScreen = useIsSmallScreen('--breakpoint_S')
 
   return (
-    <>
+    <div id='header-container'
+        className='header-zIndex'>
       <header
         id='header-logo'
-        className='header-zIndex'
       >
         <LogoMocoCanvas logoMocoMaterial={getMatteMaterial(logoMocoData.material.color)} />
       </header>
       <header
         id='header-buttons'
-        className='header-zIndex'
+        // className='header-zIndex'
       >
         {!isSmallScreen && <LocaleSwitcherButton />}
         <MenuButton isSmallScreen={isSmallScreen} />
       </header>
-    </>
+    </div>
   )
 }
