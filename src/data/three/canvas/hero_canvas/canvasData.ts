@@ -1,7 +1,7 @@
 import type { ICanvasData } from '@/types/three/types'
 
 export const canvasDefaultValues: ICanvasData = {
-  id: 'hero_canvas',
+  id: 'hero-canvas',
   dpr: 1.5,
   legacy: false,
   linear: true,
