@@ -34,9 +34,9 @@ export default function Socials({ isSmallScreen }: { isSmallScreen: boolean }) {
 
   useEffect(() => {
     if (menu.isOpen) {
-      timelineRef.current.play()
+      timelineRef.current.restart()
     } else {
-      timelineRef.current.reverse()
+      timelineRef.current.kill()
     }
   }, [menu.isOpen])
 
