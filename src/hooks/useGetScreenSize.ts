@@ -6,6 +6,10 @@ export default function useGetScreenSize(breakpointVars: string[]) {
   const breakpointsRef = useRef<number[]>([])
 
   useEffect(() => {
+    console.log(screenSize)
+  }, [screenSize])
+
+  useEffect(() => {
     const breakpointNames = ['XS', 'S', 'M', 'L']
 
     if (typeof window !== 'undefined') {
@@ -27,7 +31,6 @@ export default function useGetScreenSize(breakpointVars: string[]) {
             )
           ],
         )
-        console.log(screenSize)
       }
 
       checkScreenSize() // Initial check

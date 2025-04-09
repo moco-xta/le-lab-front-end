@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useMemo } from 'react'
 
 import type { IMetroLineData } from '@/types/data/types'
 
@@ -18,6 +18,19 @@ export default function ParisMetroMap() {
     '--breakpoint_L',
   ])
 
+  const strokeWidths = useMemo(() => {
+    return {
+      'XS': 1.25,
+      'S': 1.5,
+      'M': 1.25,
+      'L': 1.25,
+    }
+  }, [])
+
+  useEffect(() => {
+    console.log(strokeWidths[screenSize as keyof typeof strokeWidths])
+  }, [screenSize, strokeWidths])
+
   return (
     <div id='paris_metro_map'>
       {parisMetroLinesData.map((line: IMetroLineData) => (
@@ -29,7 +42,7 @@ export default function ParisMetroMap() {
             id={line.id}
             path={line.d}
             stroke={line.color}
-            strokeWidth={2}
+            strokeWidth={strokeWidths[screenSize as keyof typeof strokeWidths]}
           />
         </div>
       ))}

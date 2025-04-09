@@ -5,4 +5,19 @@
   // margin-top: 10vw;
   // margin-left: -10vw;
   // height: 150vh;
+  opacity: 0.5;
+}
+
+@media (max-width: $breakpoint_M) {
+  #paris_metro_map {
+    transform-origin: center;
+    transform: scale(1.15);
+  }
+}
+
+@media (max-width: $breakpoint_M) {
+  #paris_metro_map {
+    transform-origin: center;
+    transform: scale(1.25);
+  }
 }
