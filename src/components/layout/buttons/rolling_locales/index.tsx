@@ -1,21 +1,36 @@
 import React, { useEffect, useRef } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { useLocale } from 'next-intl'
 
-import { RootState } from '@/redux/store'
+import type { TLocales } from '@/types/locales/types'
+
+import { usePathname, useRouter } from '@/i18n/routing'
+
+import { AppDispatch, RootState } from '@/redux/store'
+
+import { toggleLocaleSwitcher, toggleMenu } from '@/redux/slices/appStateSlice'
 
 import { locales } from '@/i18n/config'
 
 import './index.scss'
 
 export default function RollingLocales() {
-  const currentLocale = useLocale()
+  const locale = useLocale()
+  const router = useRouter()
+  const pathname = usePathname()
+  const dispatch = useDispatch<AppDispatch>()
 
-  const menu = useSelector((state: RootState) => state.appState.menu)
+  const { menu, localeSwitcher } = useSelector((state: RootState) => state.appState)
 
   const timelineRef = useRef<GSAPTimeline>(gsap.timeline({ paused: true, delay: 0.5 }))
+  
+  function handleSetCurrentLocale(localeOption: TLocales) {
+    router.replace({ pathname }, { locale: localeOption })
+    dispatch(toggleMenu())
+    dispatch(toggleLocaleSwitcher())
+  }
 
   useGSAP(() => {
     timelineRef.current
@@ -56,12 +71,13 @@ export default function RollingLocales() {
   }, [menu.isOpen])
   return (
     <div id='rolling-locales-container'>
-      {locales.map((locale) => (
+      {locales.map((localeOption) => (
         <button
-          key={`rolling_locale_button_${locale}`}
-          className={`rolling-locale-button ${locale === currentLocale ? 'active' : ''}`}
+          key={`rolling_locale_button_${localeOption}`}
+          className={`rolling-locale-button ${localeOption === locale ? 'active' : ''}`}
+          onClick={() => handleSetCurrentLocale(localeOption)}
         >
-          {locale.toUpperCase()}
+          {localeOption.toUpperCase()}
         </button>
       ))}
     </div>
