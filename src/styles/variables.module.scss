@@ -1,5 +1,10 @@
 $max-width: 1440px;
 
+$breakpoint_XS: 576px;
+$breakpoint_S: 768px;
+$breakpoint_M: 1024px;
+$breakpoint_L: 1280px;
+
 $base-padding-x: max(5vw, 40px);
 $base-padding-y: clamp(30px, 4vw, 50px);
 
