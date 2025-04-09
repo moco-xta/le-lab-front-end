@@ -10,6 +10,7 @@
   .rolling-locale-button {
     width: 2.5em;
     height: 2.5em;
+    padding-top: 2px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -23,6 +24,8 @@
   }
 
   .rolling-locale-button.active {
-    background-color: $bright-lavender;
+    font-weight: 600;
+    color: $void-black;
+    background-color: $light-grey;
   }
 }
