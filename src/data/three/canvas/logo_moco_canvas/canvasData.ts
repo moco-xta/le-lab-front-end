@@ -3,9 +3,12 @@ import type { ICanvasData } from '@/types/three/types'
 export const canvasDefaultValues: ICanvasData = {
   id: 'logo_moco_canvas',
   style: {
-    // position: 'absolute',
-    width: '150px',
-    height: '150px',
+    width: '20vw',
+    minWidth: '90px',
+    maxWidth: '150px',
+    height: '20vw',
+    minHeight: '90px',
+    maxHeight: '150px',
   },
   dpr: 2,
   shadows: true,
