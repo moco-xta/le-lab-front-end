@@ -16,7 +16,7 @@ import MenuButtonDots from '@/components/svg/menu_button_dots'
 
 import './index.scss'
 
-export default function MenuButton() {
+export default function MenuButton({ isSmallScreen }: { isSmallScreen: boolean }) {
   const t = useTranslations('BUTTONS')
   const dispatch = useDispatch<AppDispatch>()
 
@@ -27,7 +27,8 @@ export default function MenuButton() {
   const timelineRef = useRef<GSAPTimeline>(gsap.timeline({ paused: true }))
   const menuButtonRef = useRef<HTMLButtonElement>(null!)
 
-  /* useGSAP(() => {
+  useGSAP(() => {
+    /* if (!isSmallScreen) { */
     timelineRef.current
       .to(
         '#menu-button-content',
@@ -116,7 +117,19 @@ export default function MenuButton() {
         },
         0,
       )
-  }) */
+      .to(
+        '.route',
+        {
+          translateY: 0,
+          duration: 0.15,
+          ease: 'power1.out',
+          stagger: {
+            each: 0.025,
+          },
+        },
+        0,
+      )
+  })
 
   useEffect(() => {
     if (menu.isOpen) {
@@ -168,16 +181,22 @@ export default function MenuButton() {
       ref={menuButtonRef}
       id='menu-button'
       style={{
-        backgroundColor: isMenuButtonHovered && !menu.isOpen ? 'var(--white)' : 'var(--light-grey)',
+        backgroundColor: !isSmallScreen
+          ? isMenuButtonHovered && !menu.isOpen
+            ? 'var(--white)'
+            : 'var(--light-grey)'
+          : 'var(--white)',
       }}
       onClick={handleOnClick}
       onMouseEnter={handleOnMouseEnter}
       onMouseLeave={handleOnMouseLeave}
     >
-      <div id='menu-button-menu-close-container'>
-        <span id='menu-button-menu'>{t('MENU').toUpperCase()}</span>
-        <span id='menu-button-close'>{t('CLOSE').toUpperCase()}</span>
-      </div>
+      {!isSmallScreen && (
+        <div id='menu-button-menu-close-container'>
+          <span id='menu-button-menu'>{t('MENU').toUpperCase()}</span>
+          <span id='menu-button-close'>{t('CLOSE').toUpperCase()}</span>
+        </div>
+      )}
       <MenuButtonDots />
       {/* <Metaball /> */}
     </button>

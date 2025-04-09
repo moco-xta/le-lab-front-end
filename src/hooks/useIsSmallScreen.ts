@@ -2,18 +2,25 @@ import { useState, useEffect } from 'react'
 
 import styles from '@/styles/variables.module.scss'
 
-export default function useIsSmallScreen() {
-  const [screenBreakpoint] = useState<number>(parseInt(styles.screenBreakpoint, 10))
-  const [isSmallScreen, setIsSmallScreen] = useState<boolean>(window.innerWidth < screenBreakpoint)
+export default function useIsSmallScreen(breakpointVar: string) {
+  const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false)
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < screenBreakpoint)
-    }
+    if (typeof window !== 'undefined') {
+      const breakpointS = parseInt(
+        getComputedStyle(document.documentElement).getPropertyValue(breakpointVar).trim(),
+        10,
+      )
 
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [screenBreakpoint])
+      const checkScreenSize = () => {
+        setIsSmallScreen(window.innerWidth < breakpointS)
+      }
+
+      checkScreenSize() // Initial check
+      window.addEventListener('resize', checkScreenSize)
+      return () => window.removeEventListener('resize', checkScreenSize)
+    }
+  }, [])
 
   return isSmallScreen
 }

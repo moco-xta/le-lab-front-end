@@ -6,7 +6,7 @@ import Menu from './menu'
 
 import './index.scss'
 
-export default function MenuButtonsContent() {
+export default function MenuButtonContent() {
   return (
     <header
       id='menu-button-content'

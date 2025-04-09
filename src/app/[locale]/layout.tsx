@@ -5,7 +5,7 @@ import { routing } from '@/i18n/routing'
 import ReduxProvider from '@/redux/ReduxProvider'
 
 import Header from '@/components/layout/header'
-import MenuButtonsContent from '@/components/layout/header/menu_buttons_content'
+import MenuButtonContent from '@/components/layout/header/menu_button_content'
 import LocaleSwitcherButtonContent from '@/components/layout/header/locale_switcher_button_content'
 
 import '@/styles/globals.scss'
@@ -31,7 +31,7 @@ export default async function LocaleLayout({
         <ReduxProvider>
           <NextIntlClientProvider>
             <Header />
-            <MenuButtonsContent />
+            <MenuButtonContent />
             <LocaleSwitcherButtonContent />
             {children}
           </NextIntlClientProvider>
