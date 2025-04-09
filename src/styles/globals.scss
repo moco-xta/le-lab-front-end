@@ -22,6 +22,7 @@ html,
 body {
   max-width: $max-width;
   margin: 0 auto;
+  font-size: 20px;
   overflow-x: hidden;
   user-select: none;
 }
@@ -67,5 +68,33 @@ button {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+@media (max-width: $breakpoint_XS) {
+  html,
+  body {
+    font-size: 0.4em;
+  }
+}
+
+@media (max-width: $breakpoint_S) {
+  html,
+  body {
+    font-size: 0.6em;
+  }
+}
+
+@media (max-width: $breakpoint_M) {
+  html,
+  body {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: $breakpoint_L) {
+  html,
+  body {
+    font-size: 1em;
   }
 }

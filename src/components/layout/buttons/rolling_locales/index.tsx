@@ -25,7 +25,7 @@ export default function RollingLocales() {
   const { menu, localeSwitcher } = useSelector((state: RootState) => state.appState)
 
   const timelineRef = useRef<GSAPTimeline>(gsap.timeline({ paused: true, delay: 0.5 }))
-  
+
   function handleSetCurrentLocale(localeOption: TLocales) {
     router.replace({ pathname }, { locale: localeOption })
     dispatch(toggleMenu())
