@@ -5,6 +5,7 @@ import React from 'react'
 import LogoMocoCanvas from '@/components/three/canvas/logo_moco/LogoMocoCanvas'
 import LocaleSwitcherButton from '../buttons/locale_switcher_button'
 import MenuButton from '../buttons/menu_button'
+import MenuButtonSmall from '../buttons/menu_button_small'
 
 import { getMatteMaterial } from '@/components/three/materials'
 
@@ -27,6 +28,12 @@ export default function Header() {
       >
         <LocaleSwitcherButton />
         <MenuButton />
+      </header>
+      <header
+        id='header-button-S'
+        className='header-zIndex'
+      >
+        <MenuButtonSmall />
       </header>
     </>
   )

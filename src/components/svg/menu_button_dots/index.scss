@@ -9,3 +9,10 @@
     height: 100%;
   }
 }
+
+@media (max-width: $breakpoint_S) {
+  #menu-button-dots {
+    width: 0.4em;
+    height: 0.8em;
+  }
+}

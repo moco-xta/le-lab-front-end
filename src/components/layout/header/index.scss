@@ -22,3 +22,19 @@ header {
   gap: $gap_XS;
   font-size: 0.875em;
 }
+
+#header-button-S {
+  display: none;
+}
+
+@media (max-width: $breakpoint_S) {
+  #header-buttons {
+    display: none;
+  }
+
+  #header-button-S {
+    right: 0;
+    padding: $base-padding-y $base-padding-x 0 0;
+    display: block;
+  }
+}

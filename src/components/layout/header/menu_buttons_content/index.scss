@@ -6,3 +6,9 @@
   height: 100vh;
   transform: translateX(100%);
 }
+
+@media (max-width: $breakpoint_S) {
+  #menu-button-content {
+    background-color: blue;
+  }
+}
