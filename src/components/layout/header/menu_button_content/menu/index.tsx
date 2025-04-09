@@ -23,7 +23,7 @@ export default function Menu() {
       }}
     >
       <Routes isSmallScreen={isSmallScreen} />
-      {!isSmallScreen && <Socials />}
+      <Socials isSmallScreen={isSmallScreen} />
     </div>
   )
 }

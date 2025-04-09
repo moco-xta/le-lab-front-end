@@ -119,6 +119,19 @@ export default function MenuButton({ isSmallScreen }: { isSmallScreen: boolean }
           },
           0,
         )
+    } else {
+      timelineRef.current.to(
+        '.socials-icon',
+        {
+          opacity: 1,
+          duration: 0.35,
+          ease: 'power1.out',
+          stagger: {
+            each: 0.065,
+          },
+        },
+        0,
+      )
     }
   })
 

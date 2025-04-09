@@ -103,12 +103,16 @@ export default function Route({
         gsap.fromTo(
           '.route',
           {
-            translateY: '50%',
-            rotate: '5deg',
+            translateX: '5%',
+            translateY: '-50%',
+            rotate: '-10deg',
+            opacity: 0,
           },
           {
+            translateX: 0,
             translateY: 0,
             rotate: '0deg',
+            opacity: 1,
             duration: 0.35,
             ease: 'power1.out',
             stagger: {
@@ -116,9 +120,32 @@ export default function Route({
             },
           },
         )
-      }
+      } /* else {
+        gsap.fromTo(
+          '.route',
+          {
+            translateX: 0,
+            translateY: 0,
+            rotate: '0deg',
+            opacity: 1,
+          },
+          {
+            translateX: '5%',
+            translateY: '-50%',
+            rotate: '-10deg',
+            opacity: 0,
+            duration: 0.35,
+            ease: 'power1.out',
+            stagger: {
+              each: 0.05,
+              from: 'end'
+            },
+            delay: 0.2
+          },
+        )
+      } */
     }
-  }, [menu.isOpen, isSmallScreen])
+  }, [menu, isSmallScreen])
 
   return (
     <Link

@@ -11,14 +11,34 @@
   transform-style: preserve-3d;
   will-change: transform, opacity;
 
-  .socials-icons {
+  .socials-icon {
     color: $grey-light;
     cursor: pointer;
     transition: color 0.3s ease;
   }
 
-  .socials-icons:hover {
+  .socials-icon:hover {
     color: $white;
     transition: color 0.3s ease;
+  }
+}
+
+@media (max-width: $breakpoint_S) {
+  #socials-container {
+    position: fixed;
+    width: fit-content;
+    left: 0;
+    bottom: 0;
+    padding: 0 0 $base-padding-y $base-padding-x;
+    gap: $gap_XS;
+    background-color: transparent;
+    opacity: 1;
+    transform: rotateZ(0) translateX(0) translateY(0px) translateZ(0) scale(1);
+
+    .socials-icon {
+      color: $white;
+      opacity: 0;
+      transform: rotateZ(0) translateX(0) translateY(-50px) translateZ(0) scale(1);
+    }
   }
 }

@@ -18,11 +18,11 @@ export default function Header() {
   const isSmallScreen = useIsSmallScreen('--breakpoint_S')
 
   return (
-    <div id='header-container'
-        className='header-zIndex'>
-      <header
-        id='header-logo'
-      >
+    <div
+      id='header-container'
+      className='header-zIndex'
+    >
+      <header id='header-logo'>
         <LogoMocoCanvas logoMocoMaterial={getMatteMaterial(logoMocoData.material.color)} />
       </header>
       <header
