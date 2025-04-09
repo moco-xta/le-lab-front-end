@@ -59,13 +59,18 @@
     min-height: 4.55em;
 
     .route-container {
-      display: flex;
-      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+      .route-wrapper {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 
-      .route {
-        padding: 0;
-        font-size: 4.5em;
-        transform: translateY(0);
+        .route {
+          padding: 0;
+          display: block;
+          font-size: 4.5em;
+          background-color: red;
+          transform: translateY(50%) rotate(5deg);
+          transform-origin: top left;
+          will-change: transform, background-color;
+        }
       }
     }
   }

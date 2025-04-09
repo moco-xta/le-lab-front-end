@@ -27,7 +27,7 @@ export default function MenuButton() {
   const timelineRef = useRef<GSAPTimeline>(gsap.timeline({ paused: true }))
   const menuButtonRef = useRef<HTMLButtonElement>(null!)
 
-  useGSAP(() => {
+  /* useGSAP(() => {
     timelineRef.current
       .to(
         '#menu-button-content',
@@ -106,7 +106,17 @@ export default function MenuButton() {
         },
         0,
       )
-  })
+      .to(
+        '#menu-button-dots',
+        {
+          rotate: '90deg',
+          duration: 0.25,
+          ease: 'power1.out',
+          delay: 0.1,
+        },
+        0,
+      )
+  }) */
 
   useEffect(() => {
     if (menu.isOpen) {

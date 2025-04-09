@@ -136,11 +136,13 @@ export default function Route({
         </>
       ) : (
         <div className='route-container'>
-          <div
-            className='route'
-            style={{ color: isActiveRoute ? 'var(--lime-green)' : '' }}
-          >
-            {t(route.translationKey)}
+          <div className='route-wrapper'>
+            <div
+              className='route'
+              style={{ color: isActiveRoute ? 'var(--lime-green)' : '' }}
+            >
+              {t(route.translationKey)}
+            </div>
           </div>
         </div>
       )}
