@@ -6,7 +6,7 @@ import { routesData } from '@/routes/routes'
 
 import './index.scss'
 
-export default function Routes() {
+export default function Routes({ isSmallScreen }: { isSmallScreen: boolean }) {
   return (
     <div id='routes'>
       {routesData
@@ -16,6 +16,7 @@ export default function Routes() {
           <Route
             key={`route_${route.translationKey}`}
             route={route}
+            isSmallScreen={isSmallScreen}
           />
         ))}
     </div>

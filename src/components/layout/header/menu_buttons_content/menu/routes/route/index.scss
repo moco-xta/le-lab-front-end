@@ -53,3 +53,20 @@
     transform: scale(0);
   }
 }
+
+@media (max-width: $breakpoint_S) {
+  .route-wrapper {
+    min-height: 4.55em;
+
+    .route-container {
+      display: flex;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+
+      .route {
+        padding: 0;
+        font-size: 4.5em;
+        transform: translateY(0);
+      }
+    }
+  }
+}

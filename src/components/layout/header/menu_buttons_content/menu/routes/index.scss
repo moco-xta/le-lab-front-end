@@ -13,3 +13,15 @@
   transform-style: preserve-3d;
   will-change: transform, opacity;
 }
+
+@media (max-width: $breakpoint_S) {
+  #routes {
+    position: absolute;
+    width: 100%;
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+    opacity: 1;
+    transform: rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px) scale(1);
+  }
+}

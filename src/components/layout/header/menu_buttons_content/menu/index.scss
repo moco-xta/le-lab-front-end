@@ -6,12 +6,26 @@
   flex-direction: column;
   align-items: flex-end;
   gap: $gap_XS;
+  padding: $base-padding-y $base-padding-x;
 
   #menu_content {
     width: 200px;
     height: 200px;
     display: flex;
     flex-direction: column;
+    gap: $gap_XS;
+  }
+}
+
+@media (max-width: $breakpoint_S) {
+  #menu {
+    position: absolute;
+    width: 100%;
+    margin-top: 15vh;
+    padding: $base-padding-y $base-padding-x;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     gap: $gap_XS;
   }
 }

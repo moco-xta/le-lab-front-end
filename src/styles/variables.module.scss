@@ -35,7 +35,17 @@ $gap_XL: 100px;
 $gap_XXL: 200px;
 
 :root {
-  --light-grey: #d7d8dc;
+  --max-width: 1440px;
+
+  --breakpoint_XS: 576px;
+  --breakpoint_S: 768px;
+  --breakpoint_M: 1024px;
+  --breakpoint_L: 1280px;
+
   --white: #ffffff;
+  --black: #000;
+
+  --lime-green: #b2f141;
   --bright-lavender: #b087fc;
+  --light-grey: #d7d8dc;
 }

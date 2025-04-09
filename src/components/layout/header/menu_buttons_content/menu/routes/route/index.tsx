@@ -17,7 +17,13 @@ import { splitTextToCharacters } from '@/helpers/textHelpers'
 
 import './index.scss'
 
-export default function Route({ route }: { route: IRouteData }) {
+export default function Route({
+  route,
+  isSmallScreen,
+}: {
+  route: IRouteData
+  isSmallScreen: boolean
+}) {
   const t = useTranslations('ROUTES')
   const pathname = usePathname()
   const dispatch = useDispatch<AppDispatch>()
@@ -42,49 +48,51 @@ export default function Route({ route }: { route: IRouteData }) {
   }
 
   useGSAP(() => {
-    timelineRef.current
-      .to(`.${route.translationKey}-route-character-up`, {
-        translateY: '-18px',
-        duration: 0.15,
-        ease: 'power1.out',
-        stagger: {
-          each: 0.025,
-        },
-      })
-      .to(
-        `.${route.translationKey}-route-character-down`,
-        {
+    if (!isSmallScreen) {
+      timelineRef.current
+        .to(`.${route.translationKey}-route-character-up`, {
           translateY: '-18px',
           duration: 0.15,
           ease: 'power1.out',
           stagger: {
             each: 0.025,
           },
-        },
-        0,
-      )
-      .to(
-        `.${route.translationKey}-route-background`,
-        {
-          backgroundColor: 'var(--bright-lavender)',
-          scale: 1,
-          opacity: 0.5,
-          duration: timelineRef.current.reversed() ? 0.05 : 0.25,
-          ease: 'power1.out',
-        },
-        0,
-      )
-      .to(
-        `.${route.translationKey}-route-arrow-icon`,
-        {
-          right: '15px',
-          scale: 1,
-          opacity: 1,
-          duration: 0.05,
-          ease: 'power1.out',
-        },
-        0.25,
-      )
+        })
+        .to(
+          `.${route.translationKey}-route-character-down`,
+          {
+            translateY: '-18px',
+            duration: 0.15,
+            ease: 'power1.out',
+            stagger: {
+              each: 0.025,
+            },
+          },
+          0,
+        )
+        .to(
+          `.${route.translationKey}-route-background`,
+          {
+            backgroundColor: 'var(--bright-lavender)',
+            scale: 1,
+            opacity: 0.5,
+            duration: timelineRef.current.reversed() ? 0.05 : 0.25,
+            ease: 'power1.out',
+          },
+          0,
+        )
+        .to(
+          `.${route.translationKey}-route-arrow-icon`,
+          {
+            right: '15px',
+            scale: 1,
+            opacity: 1,
+            duration: 0.05,
+            ease: 'power1.out',
+          },
+          0.25,
+        )
+    }
   })
 
   return (
@@ -96,30 +104,45 @@ export default function Route({ route }: { route: IRouteData }) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className='route-container'>
-        {Array(2)
-          .fill(null)
-          .map((_, index) => (
-            <div
-              className='route'
-              key={`route_${route.translationKey}_${index}`}
-            >
-              {splitTextToCharacters(t(route.translationKey).toUpperCase()).map((letter, index) => (
-                <span
-                  key={`route_character_${route.translationKey}_${index}`}
-                  className={`route-character ${route.translationKey}-route-character-${index === 0 ? 'up' : 'down'}`}
+      {!isSmallScreen ? (
+        <>
+          <div className='route-container'>
+            {Array(2)
+              .fill(null)
+              .map((_, index) => (
+                <div
+                  className='route'
+                  key={`route_${route.translationKey}_${index}`}
                 >
-                  {letter !== ' ' ? letter : '\u00A0'}
-                </span>
+                  {splitTextToCharacters(t(route.translationKey).toUpperCase()).map(
+                    (letter, index) => (
+                      <span
+                        key={`route_character_${route.translationKey}_${index}`}
+                        className={`route-character ${route.translationKey}-route-character-${index === 0 ? 'up' : 'down'}`}
+                      >
+                        {letter !== ' ' ? letter : '\u00A0'}
+                      </span>
+                    ),
+                  )}
+                </div>
               ))}
-            </div>
-          ))}
-      </div>
-      <div className={`route-background ${route.translationKey}-route-background`} />
-      {isActiveRoute ? (
-        <GoDotFill className='route-dot-icon' />
+          </div>
+          <div className={`route-background ${route.translationKey}-route-background`} />
+          {isActiveRoute ? (
+            <GoDotFill className='route-dot-icon' />
+          ) : (
+            <FaArrowRight className={`route-arrow-icon ${route.translationKey}-route-arrow-icon`} />
+          )}
+        </>
       ) : (
-        <FaArrowRight className={`route-arrow-icon ${route.translationKey}-route-arrow-icon`} />
+        <div className='route-container'>
+          <div
+            className='route'
+            style={{ color: isActiveRoute ? 'var(--lime-green)' : '' }}
+          >
+            {t(route.translationKey)}
+          </div>
+        </div>
       )}
     </Link>
   )
