@@ -1,7 +1,7 @@
 #header-container {
   position: fixed;
   width: 100vw;
-  max-width: $max-width;
+  margin: 0 auto;
 
   header {
     position: absolute;
@@ -16,6 +16,7 @@
   #header-logo {
     left: 0;
     padding: calc($base-padding-y - 0.5vh) 0 0 calc($base-padding-x - 1.5vw);
+    // padding: calc($base-padding-y - 0.5vh) 0 0 calc($base-padding-x - 1.5vw);
   }
 
   #header-buttons {

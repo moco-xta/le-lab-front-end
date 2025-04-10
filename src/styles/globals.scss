@@ -20,9 +20,9 @@
 
 html,
 body {
-  max-width: $max-width;
-  margin: 0 !important;
-  padding: 0 !important;
+  width: 100vw;
+  // margin: 0 !important;
+  // padding: 0 !important;
   font-size: 20px;
   overflow-x: hidden;
   user-select: none;
@@ -42,6 +42,8 @@ a {
   text-decoration: none;
 }
 
+// BUTTONS
+
 button {
   background: none;
   color: inherit;
@@ -50,6 +52,13 @@ button {
   font: inherit;
   cursor: pointer;
   outline: inherit;
+}
+
+.button-style-1 {
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 // Z-INDEXES
@@ -64,6 +73,28 @@ button {
 
 .locale-switcher-button-content-zIndex {
   z-index: 8;
+}
+
+// TITLES
+
+.section-title {
+  font-size: 8vw;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+// ANIMATION
+
+.text-revealed-wrapper {
+  display: inline-block;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+
+  .text-revealed {
+    width: auto;
+    height: auto;
+    display: inline-block;
+    will-change: transform, opacity;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

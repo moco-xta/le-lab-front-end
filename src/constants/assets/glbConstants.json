@@ -5,6 +5,9 @@
     "O_HELIUM_BALLOON": "/models/glb/hero/OHeliumBalloon.glb",
     "SMILEY": "/models/glb/hero/Smiley.glb"
   },
+  "LIB": {
+    "ROUNDED_PLANE": "/models/glb/lib/RoundedPlane.glb"
+  },
   "LOGOS": {
     "LOGO_MOCO": "/models/glb/logos/LogoMoco.glb"
   }

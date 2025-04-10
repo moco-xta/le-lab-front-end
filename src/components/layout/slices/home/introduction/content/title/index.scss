@@ -1,0 +1,51 @@
+#introduction-title {
+  margin: $gap_XL;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  .introduction-title-lines {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    .introduction-title-text-blocks {
+      opacity: 1;
+    }
+  }
+
+  #introduction-title-first-line {
+    transform: translateX(0%);
+
+    #hi-text {
+      transform: translateY(100%);
+    }
+
+    #im-federico-container {
+      transform: translateX(0%);
+
+      #im-text {
+        transform: translateY(100%);
+      }
+
+      #federico-text {
+        transform: translateY(100%);
+      }
+    }
+  }
+
+  #introduction-title-second-line {
+    #a-text {
+      transform: translateY(-100%);
+    }
+
+    #front-end-text {
+      transform: translateY(-100%);
+    }
+
+    #developer-text {
+      transform: translateY(-100%);
+    }
+  }
+}

@@ -27,7 +27,7 @@ export default function AnimatedPath({ id, path, stroke, strokeWidth }: TPathAni
 
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: '#introduction-slice',
+        trigger: '#introduction-section',
         start: 'top 75%',
         end: 'bottom 75%',
         scrub: true,
@@ -39,7 +39,8 @@ export default function AnimatedPath({ id, path, stroke, strokeWidth }: TPathAni
       strokeDashoffset: 0,
       opacity: 1,
       duration: 2,
-      ease: 'power1.inOut',
+      ease: 'power1.out',
+      // ease: 'none',
     })
 
     return () => {
@@ -56,6 +57,7 @@ export default function AnimatedPath({ id, path, stroke, strokeWidth }: TPathAni
       stroke={stroke}
       opacity={0}
       strokeWidth={strokeWidth}
+      strokeLinecap='round'
       // transform="scale(0.3 0.3)"
     />
   )

@@ -1,0 +1,33 @@
+#home-introduction-container {
+  width: 100%;
+  margin-left: 45vw;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  font-size: 1em;
+  line-height: 1.5em;
+
+  .introduction-line-wrapper {
+    display: block;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 150%, 0% 150%);
+
+    .introduction-line {
+      opacity: 0;
+      transform-origin: bottom left;
+      transform: translateY(100%) rotateZ(3deg);
+    }
+  }
+
+  .gradient-text {
+    // background: linear-gradient(to right, #000, #000 100%);
+    // -webkit-background-clip: text;
+    // background-clip: text;
+
+    // color: transparent;
+    display: inline-block;
+  }
+
+  #learn-more-button {
+    margin-top: 120px;
+  }
+}

@@ -7,6 +7,7 @@ import { useTranslations } from 'next-intl'
 
 import Hero from '@/components/layout/slices/home/hero'
 import Introduction from '@/components/layout/slices/home/introduction'
+import Projects from '@/components/layout/slices/home/projects'
 
 gsap.registerPlugin(useGSAP)
 gsap.registerPlugin(ScrollTrigger)
@@ -20,6 +21,7 @@ export default function HomePage() {
     <div id='home-page'>
       <Hero />
       <Introduction />
+      <Projects />
     </div>
   )
 }

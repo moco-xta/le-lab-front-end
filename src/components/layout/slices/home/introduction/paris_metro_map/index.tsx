@@ -37,7 +37,7 @@ export default function ParisMetroMap() {
     <div id='paris-metro-map'>
       <svg
         ref={svgRef}
-        viewBox='0 0 100 100'
+        viewBox='0 -1 100 103'
         preserveAspectRatio='xMidYMid meet'
       >
         {parisMetroLinesData.map((line: IMetroLineData) => (

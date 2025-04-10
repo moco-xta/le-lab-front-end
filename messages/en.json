@@ -10,6 +10,23 @@
         "LINE_2": "web experiences with real-time 3D.",
         "LINE_3": "Code, creativity, and performance in perfect sync."
       }
+    },
+    "INTRODUCTION": {
+      "SECTION_TITLE": {
+        "HI": "Hi!",
+        "I_M": "I'm",
+        "A": "a",
+        "FRONT_END": "front-end",
+        "DEVELOPER": "developer"
+      },
+      "INTRODUCTION": {
+        "LINE_1": "Digital architect weaving front-end magic with full-stack awareness.  ",
+        "LINE_2": "My passion lives where pixels meet spatial computing ",
+        "LINE_3": "– crafting interfaces that evolve into living 3D worlds.",
+        "LINE_4": "I build bridges between user experience and real-time immersion,",
+        "LINE_5": "transforming screens into portals for tomorrow’s interactive dimensions.",
+        "LINE_6": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+      }
     }
   },
   "LOCALES": {
