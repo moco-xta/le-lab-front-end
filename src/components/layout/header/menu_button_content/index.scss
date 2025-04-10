@@ -1,7 +1,5 @@
 #menu-button-content {
   position: fixed;
-  top: 0;
-  right: 0;
   width: 100vw;
   height: 100vh;
   transform: translateX(100%);
@@ -9,7 +7,6 @@
 
 @media (max-width: $breakpoint_S) {
   #menu-button-content {
-    // opacity: 0;
-    background-color: #0000ff88;
+    background-color: $blue-00f;
   }
 }

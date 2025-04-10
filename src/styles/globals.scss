@@ -21,7 +21,8 @@
 html,
 body {
   max-width: $max-width;
-  margin: 0 auto;
+  margin: 0 !important;
+  padding: 0 !important;
   font-size: 20px;
   overflow-x: hidden;
   user-select: none;

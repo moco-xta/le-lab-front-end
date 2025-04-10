@@ -11,11 +11,13 @@ import Introduction from '@/components/layout/slices/home/introduction'
 gsap.registerPlugin(useGSAP)
 gsap.registerPlugin(ScrollTrigger)
 
+import './page.scss'
+
 export default function HomePage() {
   const t = useTranslations()
 
   return (
-    <div>
+    <div id='home-page'>
       <Hero />
       <Introduction />
     </div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react'
+import React, { useEffect, useMemo, useRef } from 'react'
 
 import type { IMetroLineData } from '@/types/data/types'
 
@@ -18,12 +18,14 @@ export default function ParisMetroMap() {
     '--breakpoint_L',
   ])
 
+  const svgRef = useRef<SVGSVGElement>(null)
+
   const strokeWidths = useMemo(() => {
     return {
-      'XS': 1.25,
-      'S': 1.5,
-      'M': 1.25,
-      'L': 1.25,
+      XS: 1.25,
+      S: 1.5,
+      M: 1.25,
+      L: 1.25,
     }
   }, [])
 
@@ -32,20 +34,22 @@ export default function ParisMetroMap() {
   }, [screenSize, strokeWidths])
 
   return (
-    <div id='paris_metro_map'>
-      {parisMetroLinesData.map((line: IMetroLineData) => (
-        <div
-          key={line.id}
-          id='paris_metro_map'
-        >
+    <div id='paris-metro-map'>
+      <svg
+        ref={svgRef}
+        viewBox='0 0 100 100'
+        preserveAspectRatio='xMidYMid meet'
+      >
+        {parisMetroLinesData.map((line: IMetroLineData) => (
           <AnimatedPath
+            key={line.id}
             id={line.id}
             path={line.d}
             stroke={line.color}
             strokeWidth={strokeWidths[screenSize as keyof typeof strokeWidths]}
           />
-        </div>
-      ))}
+        ))}
+      </svg>
     </div>
   )
 }

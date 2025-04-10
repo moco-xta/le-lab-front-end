@@ -6,7 +6,7 @@ import './index.scss'
 
 export default function Introduction() {
   return (
-    <section id='introduction_slice'>
+    <section id='introduction-slice'>
       <ParisMetroMap />
     </section>
   )

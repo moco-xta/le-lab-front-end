@@ -9,18 +9,10 @@ export type TPathAnimation = {
   path: string
   stroke?: string
   strokeWidth?: number
-  preserveAspectRatio?: string // New prop
 }
 
-export default function AnimatedPath({
-  id,
-  path,
-  stroke,
-  strokeWidth,
-  preserveAspectRatio = 'xMidYMid meet',
-}: TPathAnimation) {
+export default function AnimatedPath({ id, path, stroke, strokeWidth }: TPathAnimation) {
   const pathRef = useRef<SVGPathElement>(null)
-  const svgRef = useRef<SVGSVGElement>(null)
 
   useEffect(() => {
     if (!pathRef.current) return
@@ -35,7 +27,7 @@ export default function AnimatedPath({
 
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: svgRef.current,
+        trigger: '#introduction-slice',
         start: 'top 75%',
         end: 'bottom 75%',
         scrub: true,
@@ -57,22 +49,14 @@ export default function AnimatedPath({
   }, [])
 
   return (
-    <div style={{ zIndex: `${id}`, position: 'absolute', width: '100%', height: '100%' }}>
-      <svg
-        ref={svgRef}
-        viewBox='0 -1 100 100'
-        preserveAspectRatio={preserveAspectRatio}
-      >
-        <path
-          ref={pathRef}
-          d={scaleSvgPath(path, 0.145)}
-          fill='none'
-          stroke={stroke}
-          opacity={0}
-          strokeWidth={strokeWidth}
-          // transform="scale(0.3 0.3)"
-        />
-      </svg>
-    </div>
+    <path
+      ref={pathRef}
+      d={scaleSvgPath(path, 0.145)}
+      fill='none'
+      stroke={stroke}
+      opacity={0}
+      strokeWidth={strokeWidth}
+      // transform="scale(0.3 0.3)"
+    />
   )
 }
