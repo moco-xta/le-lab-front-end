@@ -38,13 +38,14 @@ function addModel(
 
   video.play()
 
-  loader.load(glbConstants.LIB.ROUNDED_PLANE, function (gltf) {
+  loader.load(glbConstants.HOME.INTRODUCTION.REEL_PLANE, function (gltf) {
     const model = gltf.scenes[0].children[0]
     if (model instanceof THREE.Mesh) {
       model.material = material
+      console.log(model)
       scene.add(model)
 
-      /* mixerRef.current = new THREE.AnimationMixer(model)
+      mixerRef.current = new THREE.AnimationMixer(model)
       const actions = {
         action1: mixerRef.current.clipAction(gltf.animations[0]),
         action2: mixerRef.current.clipAction(gltf.animations[1]),
@@ -72,7 +73,7 @@ function addModel(
             }
           },
         },
-      }) */
+      })
     }
   })
 }

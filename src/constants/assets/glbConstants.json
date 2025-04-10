@@ -1,9 +1,14 @@
 {
-  "HERO": {
-    "C_HELIUM_BALLOON": "/models/glb/hero/CHeliumBalloon.glb",
-    "M_HELIUM_BALLOON": "/models/glb/hero/MHeliumBalloon.glb",
-    "O_HELIUM_BALLOON": "/models/glb/hero/OHeliumBalloon.glb",
-    "SMILEY": "/models/glb/hero/Smiley.glb"
+  "HOME": {
+    "HERO": {
+      "C_HELIUM_BALLOON": "/models/glb/hero/CHeliumBalloon.glb",
+      "M_HELIUM_BALLOON": "/models/glb/hero/MHeliumBalloon.glb",
+      "O_HELIUM_BALLOON": "/models/glb/hero/OHeliumBalloon.glb",
+      "SMILEY": "/models/glb/hero/Smiley.glb"
+    },
+    "INTRODUCTION": {
+      "REEL_PLANE": "/models/glb/introduction/ReelPlane.glb"
+    }
   },
   "LIB": {
     "ROUNDED_PLANE": "/models/glb/lib/RoundedPlane.glb"

@@ -7,7 +7,7 @@ import type { IGLTFResult } from '@/types/three/types'
 import { default as glbConstants } from '@/constants/assets/glbConstants.json'
 
 const Smiley = forwardRef<THREE.Mesh, JSX.IntrinsicElements['mesh']>((props, ref) => {
-  const { nodes, materials } = useGLTF(glbConstants.HERO.SMILEY) as unknown as IGLTFResult
+  const { nodes, materials } = useGLTF(glbConstants.HOME.HERO.SMILEY) as unknown as IGLTFResult
 
   return (
     <mesh
@@ -21,6 +21,6 @@ const Smiley = forwardRef<THREE.Mesh, JSX.IntrinsicElements['mesh']>((props, ref
 
 Smiley.displayName = 'Smiley'
 
-useGLTF.preload(glbConstants.HERO.SMILEY)
+useGLTF.preload(glbConstants.HOME.HERO.SMILEY)
 
 export default Smiley

@@ -9,7 +9,7 @@ import { default as glbConstants } from '@/constants/assets/glbConstants.json'
 import { heliumBalloonMaterial } from '../../materials'
 
 const OHeliumBalloon = forwardRef<THREE.Mesh, JSX.IntrinsicElements['mesh']>((props, ref) => {
-  const { nodes } = useGLTF(glbConstants.HERO.O_HELIUM_BALLOON) as unknown as IGLTFResult
+  const { nodes } = useGLTF(glbConstants.HOME.HERO.O_HELIUM_BALLOON) as unknown as IGLTFResult
 
   return (
     <mesh
@@ -23,6 +23,6 @@ const OHeliumBalloon = forwardRef<THREE.Mesh, JSX.IntrinsicElements['mesh']>((pr
 
 OHeliumBalloon.displayName = 'OHeliumBalloon'
 
-useGLTF.preload(glbConstants.HERO.O_HELIUM_BALLOON)
+useGLTF.preload(glbConstants.HOME.HERO.O_HELIUM_BALLOON)
 
 export default OHeliumBalloon
