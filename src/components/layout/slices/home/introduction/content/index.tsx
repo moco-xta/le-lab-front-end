@@ -7,9 +7,16 @@ import './index.scss'
 
 export default function Content() {
   return (
+    <>
+      <IntroductionTitle />
+      <IntroductionParagraph />
+    </>
+  )
+
+  /* return (
     <div id='introduction-content'>
       <IntroductionTitle />
       <IntroductionParagraph />
     </div>
-  )
+  ) */
 }

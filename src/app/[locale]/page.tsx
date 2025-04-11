@@ -19,9 +19,9 @@ export default function HomePage() {
 
   return (
     <div id='home-page'>
-      <Hero />
+      {/* <Hero /> */}
       <Introduction />
-      <Projects />
+      {/* <Projects /> */}
     </div>
   )
 }
