@@ -43,7 +43,6 @@ export default function ParisMetroMap() {
         {parisMetroLinesData.map((line: IMetroLineData) => (
           <AnimatedPath
             key={line.id}
-            id={line.id}
             path={line.d}
             stroke={line.color}
             strokeWidth={strokeWidths[screenSize as keyof typeof strokeWidths]}

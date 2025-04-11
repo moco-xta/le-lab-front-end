@@ -5,13 +5,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { scaleSvgPath } from '@/helpers/svgHelpers'
 
 export type TPathAnimation = {
-  id: number
   path: string
   stroke?: string
   strokeWidth?: number
 }
 
-export default function AnimatedPath({ id, path, stroke, strokeWidth }: TPathAnimation) {
+export default function AnimatedPath({ path, stroke, strokeWidth }: TPathAnimation) {
   const pathRef = useRef<SVGPathElement>(null)
 
   useEffect(() => {

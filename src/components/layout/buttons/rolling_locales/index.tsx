@@ -22,7 +22,7 @@ export default function RollingLocales() {
   const pathname = usePathname()
   const dispatch = useDispatch<AppDispatch>()
 
-  const { menu, localeSwitcher } = useSelector((state: RootState) => state.appState)
+  const { menu } = useSelector((state: RootState) => state.appState)
 
   const timelineRef = useRef<GSAPTimeline>(gsap.timeline({ paused: true, delay: 0.5 }))
 

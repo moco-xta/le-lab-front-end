@@ -1,9 +1,6 @@
 import React from 'react'
 import { AiFillThunderbolt } from 'react-icons/ai'
-import { HiMiniArrowDownCircle } from 'react-icons/hi2'
-import { LuCircleArrowDown } from 'react-icons/lu'
 import { FaArrowDown } from 'react-icons/fa'
-// import { BsFire } from "react-icons/bs";
 
 import './index.scss'
 

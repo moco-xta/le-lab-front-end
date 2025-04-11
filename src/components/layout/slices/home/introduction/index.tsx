@@ -1,9 +1,7 @@
 import React, { useRef } from 'react'
 
-import Grid from '@/components/layout/lib/grid'
 import Content from './content'
 import Reel from './reel'
-import ParisMetroMap from './paris_metro_map'
 
 import './index.scss'
 
