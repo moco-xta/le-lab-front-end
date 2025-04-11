@@ -7,10 +7,10 @@ import './index.scss';
 gsap.registerPlugin(ScrollTrigger);
 
 const Reel = () => {
-  const svgRef = useRef<SVGSVGElement>(null);
-  const container1Ref = useRef<HTMLDivElement>(null);
-  const container2Ref = useRef<HTMLDivElement>(null);
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const svgRef = useRef<SVGSVGElement>(null!);
+  const container1Ref = useRef<HTMLDivElement>(null!);
+  const container2Ref = useRef<HTMLDivElement>(null!);
+  const sectionRef = useRef<HTMLDivElement>(null!);
 
   useEffect(() => {
     const svg = svgRef.current;
