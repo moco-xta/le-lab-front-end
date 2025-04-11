@@ -2,6 +2,8 @@ import { useRef, useEffect } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
+import { default as videosConstants } from '@/constants/assets/videosConstants.json'
+
 import './index.scss'
 
 const Reel = ({ sectionRef }: { sectionRef: React.RefObject<HTMLDivElement> }) => {
@@ -87,15 +89,38 @@ const Reel = ({ sectionRef }: { sectionRef: React.RefObject<HTMLDivElement> }) =
       <svg
         ref={svgRef}
         id='reel-svg'
-        viewBox='0 0 100 100'
-        preserveAspectRatio='none'
+        viewBox='0 0 16 9'
+        preserveAspectRatio='xMidYMid meet'
+        style={{
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+        }}
       >
-        <rect
-          width='100'
-          height='100'
-          fill='#FF0000'
-          opacity='1'
-        />
+        <foreignObject
+          width='100%'
+          height='100%'
+        >
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              objectPosition: 'center',
+              display: 'block',
+            }}
+          >
+            <source
+              src={videosConstants.REEL}
+              type='video/mp4'
+            />
+          </video>
+        </foreignObject>
       </svg>
 
       <div
