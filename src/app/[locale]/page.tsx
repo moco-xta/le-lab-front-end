@@ -14,7 +14,6 @@ gsap.registerPlugin(ScrollTrigger)
 import './page.scss'
 
 export default function HomePage() {
-
   return (
     <div id='home-page'>
       <Hero />
