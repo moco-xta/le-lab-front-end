@@ -1,4 +1,4 @@
-import React, { RefObject } from 'react'
+import React from 'react'
 
 import IntroductionTitle from './title'
 import IntroductionParagraph from './paragraph'
@@ -12,11 +12,4 @@ export default function Content() {
       <IntroductionParagraph />
     </>
   )
-
-  /* return (
-    <div id='introduction-content'>
-      <IntroductionTitle />
-      <IntroductionParagraph />
-    </div>
-  ) */
 }

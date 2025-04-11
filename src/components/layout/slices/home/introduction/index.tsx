@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 
 import Grid from '@/components/layout/lib/grid'
 import Content from './content'
@@ -8,15 +8,19 @@ import ParisMetroMap from './paris_metro_map'
 import './index.scss'
 
 export default function Introduction() {
-  return <Reel />
+  const introductionSectionRef = useRef<HTMLDivElement>(null!)
+  /* return <Reel /> */
 
-  /* return (
-    <section id='introduction-section'>
+  return (
+    <section
+      id='introduction-section'
+      ref={introductionSectionRef}
+    >
       <Content />
-      <Reel />
-      <ParisMetroMap />
+      <Reel sectionRef={introductionSectionRef} />
+      {/* <ParisMetroMap /> */}
     </section>
-  ) */
+  )
 
   /* return (
     <main>

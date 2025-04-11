@@ -3,9 +3,9 @@
   width: 100vw;
   display: grid;
   // grid-template-rows: repeat(12, minmax(0px, 1fr));
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(12, minmax(0px, 1fr));
   // grid-template-rows: repeat(12, minmax(0px, 1fr));
-  grid-template-rows: repeat(12, 200px);
+  grid-template-rows: repeat(5, minmax(0px, 1fr));
   grid-gap: 20px;
   padding: $base-padding-y $base-padding-x;
 }

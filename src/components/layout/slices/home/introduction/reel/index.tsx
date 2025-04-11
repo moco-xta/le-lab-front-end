@@ -4,9 +4,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import './index.scss'
 
-const Reel = () => {
+const Reel = ({ sectionRef }: { sectionRef: React.RefObject<HTMLDivElement> }) => {
   const svgRef = useRef<SVGSVGElement>(null!)
-  const sectionRef = useRef<HTMLDivElement>(null!)
   const initialContainerRef = useRef<HTMLDivElement>(null!)
   const targetContainerRef = useRef<HTMLDivElement>(null!)
 
@@ -81,13 +80,10 @@ const Reel = () => {
       window.removeEventListener('resize', onResize)
       ScrollTrigger.getAll().forEach((t) => t.kill())
     }
-  }, [])
+  }, [sectionRef])
 
   return (
-    <section
-      ref={sectionRef}
-      id='reel-section'
-    >
+    <>
       <svg
         ref={svgRef}
         id='reel-svg'
@@ -116,7 +112,7 @@ const Reel = () => {
       >
         Second Container
       </div>
-    </section>
+    </>
   )
 }
 
