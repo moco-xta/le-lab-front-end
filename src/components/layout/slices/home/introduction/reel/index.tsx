@@ -1,10 +1,8 @@
-'use client'
 import { useRef, useEffect } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import './index.scss'
 
-gsap.registerPlugin(ScrollTrigger)
+import './index.scss'
 
 const Reel = () => {
   const svgRef = useRef<SVGSVGElement>(null!)
@@ -21,29 +19,24 @@ const Reel = () => {
     if (!svg || !initialContainer || !targetContainer || !section) return
 
     const initAnimation = () => {
-      // Get positions relative to document
-      const initialContainerPos = initialContainer.getBoundingClientRect()
-      const targetContainerPos = targetContainer.getBoundingClientRect()
-      const scrollY = window.scrollY
+      const sectionBCR = section.getBoundingClientRect()
+      const initialContainerBCR = initialContainer.getBoundingClientRect()
+      const targetContainerBCR = targetContainer.getBoundingClientRect()
 
-      // Convert to absolute document coordinates
-      const startX = initialContainerPos.left
-      const startY = initialContainerPos.top + scrollY
-      const endX = targetContainerPos.left
-      const endY = targetContainerPos.top + scrollY
+      const startX = initialContainerBCR.left
+      const startY = initialContainerBCR.top - sectionBCR.top
+      const endX = targetContainerBCR.left
+      const endY = targetContainerBCR.top - sectionBCR.top
 
-      // Set initial SVG position (absolutely positioned)
       gsap.set(svg, {
-        position: 'absolute',
         top: startY,
         left: startX,
-        width: initialContainerPos.width,
-        height: initialContainerPos.height,
+        width: initialContainerBCR.width,
+        height: initialContainerBCR.height,
         opacity: 1,
         display: 'block',
       })
 
-      // Create the animation timeline
       ScrollTrigger.create({
         trigger: section,
         start: 'top top',
@@ -52,21 +45,17 @@ const Reel = () => {
         markers: true,
         onUpdate: (self) => {
           const progress = self.progress
-          const currentScrollY = window.scrollY
 
-          // Calculate current position (absolute document coordinates)
           const currentX = startX + (endX - startX) * progress
-          const currentY = startY + (endY - startY) * progress - currentScrollY
+          const currentY = startY + (endY - startY) * progress
 
-          // Calculate current size
           const currentWidth =
-            initialContainerPos.width +
-            (targetContainerPos.width - initialContainerPos.width) * progress
+            initialContainerBCR.width +
+            (targetContainerBCR.width - initialContainerBCR.width) * progress
           const currentHeight =
-            initialContainerPos.height +
-            (targetContainerPos.height - initialContainerPos.height) * progress
+            initialContainerBCR.height +
+            (targetContainerBCR.height - initialContainerBCR.height) * progress
 
-          // Apply transformations
           gsap.to(svg, {
             top: currentY,
             left: currentX,
@@ -79,7 +68,6 @@ const Reel = () => {
       })
     }
 
-    // Handle resize and initial load
     const onResize = () => {
       ScrollTrigger.getAll().forEach((t) => t.kill())
       initAnimation()
@@ -98,14 +86,13 @@ const Reel = () => {
   return (
     <section
       ref={sectionRef}
-      className='section'
+      id='reel-section'
     >
       <svg
         ref={svgRef}
-        className='transferSvg'
+        id='reel-svg'
         viewBox='0 0 100 100'
         preserveAspectRatio='none'
-        // style={{ display: 'none' }}
       >
         <rect
           width='100'
@@ -117,15 +104,15 @@ const Reel = () => {
 
       <div
         ref={initialContainerRef}
-        id='initial'
-        className='benchmark'
+        id='initial-container'
+        className='reel-container'
       >
         First Container
       </div>
       <div
         ref={targetContainerRef}
-        id='final'
-        className='benchmark'
+        id='target-container'
+        className='reel-container'
       >
         Second Container
       </div>
