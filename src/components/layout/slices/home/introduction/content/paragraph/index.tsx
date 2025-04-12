@@ -34,7 +34,7 @@ export default function IntroductionParagraph() {
       rotateZ: '0deg',
       opacity: 1,
       duration: 0.5,
-      delay: 0.5,
+      delay: 1.5,
       ease: 'power1.out',
       stagger: 0.2,
     })

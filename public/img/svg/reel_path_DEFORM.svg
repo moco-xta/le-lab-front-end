@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="160"
+   height="90"
+   viewBox="0 0 42.333332 23.8125"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   sodipodi:docname="reel_path_DEFORM.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     inkscape:zoom="0.64890085"
+     inkscape:cx="503.92906"
+     inkscape:cy="442.28637"
+     inkscape:window-width="1584"
+     inkscape:window-height="951"
+     inkscape:window-x="148"
+     inkscape:window-y="52"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="rect1"
+       style="fill:#0c208f;stroke-width:0.0499999;stroke-miterlimit:20;paint-order:stroke fill markers"
+       d="M 1.3229166,0 H 41.010417 c 0.732896,0 1.322916,0.59002078 1.322916,1.3229166 V 22.489582 c 0,0.732896 -0.59002,1.322917 -1.322916,1.322917 H 1.3229166 C 0.59002078,23.812499 0,23.222478 0,22.489582 V 1.3229166 C 0,0.59002078 0.59002078,0 1.3229166,0 Z" />
+  </g>
+</svg>

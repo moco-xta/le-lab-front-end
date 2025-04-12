@@ -16,6 +16,21 @@ const nextConfig: NextConfig = {
     includePaths: [path.join(__dirname, 'src/styles')],
     prependData: `@use 'variables.module' as *;`,
   },
+  transpilePackages: ['three'],
+  webpack: (config) => {
+    config.experiments = { asyncWebAssembly: true }
+    config.module.rules.push(
+      {
+        test: /\.(glsl|frag|vert)$/,
+        type: 'asset/source',
+      },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+      },
+    )
+    return config
+  },
 }
 
 export default withBundleAnalyzer(withNextIntl(nextConfig))

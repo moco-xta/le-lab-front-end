@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 
 import Content from './content'
 import Reel from './reel'
+import ParisMetroMap from './paris_metro_map'
 
 import './index.scss'
 
@@ -16,7 +17,7 @@ export default function Introduction() {
     >
       <Content />
       <Reel sectionRef={introductionSectionRef} />
-      {/* <ParisMetroMap /> */}
+      <ParisMetroMap />
     </section>
   )
 

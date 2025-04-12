@@ -23,6 +23,7 @@
       object-fit: contain;
       object-position: center;
       background-color: black;
+      border-radius: 0.5px;
     }
   }
 }
@@ -32,6 +33,7 @@
   grid-column: 1 / 5;
   width: 100%;
   aspect-ratio: 16 / 9;
+  margin-top: -100px
 }
 
 #target-container {
