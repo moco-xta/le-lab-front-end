@@ -1,12 +1,12 @@
-import type { NextConfig } from 'next'
-import bundleAnalyzer from '@next/bundle-analyzer'
-import createNextIntlPlugin from 'next-intl/plugin'
-import path from 'path'
+import type { NextConfig } from 'next';
+import bundleAnalyzer from '@next/bundle-analyzer';
+import createNextIntlPlugin from 'next-intl/plugin';
+import path from 'path';
 
 const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
-})
-const withNextIntl = createNextIntlPlugin()
+});
+const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
@@ -18,19 +18,30 @@ const nextConfig: NextConfig = {
   },
   transpilePackages: ['three'],
   webpack: (config) => {
-    config.experiments = { asyncWebAssembly: true }
+    config.experiments = { asyncWebAssembly: true };
     config.module.rules.push(
       {
         test: /\.(glsl|frag|vert)$/,
-        type: 'asset/source',
+        use: ['raw-loader']
       },
       {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
       },
-    )
-    return config
+    );
+    return config;
   },
-}
+  experimental: {
+    turbo: {
+      rules: {
+        '*.glsl': ['asset/source'],
+        '*.vs': ['asset/source'],
+        '*.fs': ['asset/source'],
+        '*.vert': ['asset/source'],
+        '*.frag': ['asset/source'],
+      },
+    },
+  },
+};
 
-export default withBundleAnalyzer(withNextIntl(nextConfig))
+export default withBundleAnalyzer(withNextIntl(nextConfig));

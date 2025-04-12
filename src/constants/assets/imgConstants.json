@@ -6,5 +6,8 @@
     "HDR": {
       "PEPPERMINT_POWERPLANT_2_1K": "/img/environments/hdr/peppermint_powerplant_2_1k.hdr"
     }
+  },
+  "SVG": {
+    "REEL": "/img/svg/reel_path.svg"
   }
 }
