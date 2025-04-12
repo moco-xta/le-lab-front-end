@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react'
 import * as THREE from 'three'
-import { useFrame, useThree } from '@react-three/fiber'
+import { useFrame } from '@react-three/fiber'
 import { SVGLoader } from 'three/examples/jsm/Addons.js'
 
 const vertexShader = `
@@ -106,95 +106,3 @@ export default function DeformedSVG({ svgUrl }: { svgUrl: string }) {
 
   return <group ref={meshRef} />
 }
-
-/* const vertexShader = `
-varying vec2 vUv;
-void main() {
-  vUv = uv;
-  gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-}
-`
-
-const fragmentShader = `
-varying vec2 vUv;
-uniform vec3 uColor;
-uniform float uTime;
-
-void main() {
-  // Animate color for visibility (remove this in production)
-  vec3 animatedColor = uColor * (0.8 + 0.2 * sin(uTime));
-  gl_FragColor = vec4(animatedColor, 1.0);
-}
-` */
-
-/* export default function FilledSVG({ svgUrl }: { svgUrl: string }) {
-  const groupRef = useRef<THREE.Group>(null!)
-  const { camera } = useThree()
-  const uniforms = useRef({
-    uTime: { value: 0 },
-    uColor: { value: new THREE.Color(0.2, 0.5, 0.8) }
-  })
-
-  useEffect(() => {
-    const loader = new SVGLoader()
-    loader.load(svgUrl, (data) => {
-      const group = new THREE.Group()
-      const shapes: THREE.Shape[] = []
-
-      // First pass: Collect all shapes and their fill colors
-      data.paths.forEach((path) => {
-        const pathShapes = SVGLoader.createShapes(path)
-        pathShapes.forEach((shape) => {
-          shapes.push(shape)
-        })
-      })
-
-      // Create a single geometry from all shapes
-      const mergedGeometry = new THREE.BufferGeometry()
-      const material = new THREE.ShaderMaterial({
-        vertexShader,
-        fragmentShader,
-        uniforms: uniforms.current,
-        side: THREE.DoubleSide
-      })
-
-      // Create a shape geometry for each path with proper fill
-      shapes.forEach((shape) => {
-        const geometry = new THREE.ShapeGeometry(shape)
-        const mesh = new THREE.Mesh(geometry, material)
-        group.add(mesh)
-      })
-
-      // Center and scale the group
-      const box = new THREE.Box3().setFromObject(group)
-      const center = new THREE.Vector3()
-      box.getCenter(center)
-      group.position.sub(center)
-      
-      const size = box.getSize(new THREE.Vector3())
-      const maxDim = Math.max(size.x, size.y)
-      const scale = 5 / maxDim
-      group.scale.set(scale, scale, scale)
-
-      if (groupRef.current) {
-        // Clear previous children
-        while (groupRef.current.children.length) {
-          groupRef.current.remove(groupRef.current.children[0])
-        }
-        groupRef.current.add(group)
-      }
-
-      // Position camera
-      camera.position.z = 10
-      camera.lookAt(0, 0, 0)
-    }, undefined, (error) => {
-      console.error('Error loading SVG:', error)
-    })
-  }, [svgUrl, camera])
-
-  useFrame(({ clock }) => {
-    uniforms.current.uTime.value = clock.getElapsedTime()
-  })
-
-  return <group ref={groupRef} />
-} */
