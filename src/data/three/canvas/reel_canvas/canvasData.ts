@@ -3,10 +3,10 @@ import type { ICanvasData } from '@/types/three/types'
 export const canvasDefaultValues: ICanvasData = {
   id: 'reel-canvas',
   style: {
-    gridRow: '4 / -1',
-    gridColumn: '1 / -1',
+    position: 'absolute',
+    opacity: 1,
     width: '100%',
-    aspectRatio: '16 / 9',
+    height: '100%',
   },
   dpr: 2,
   legacy: false,

@@ -9,17 +9,19 @@ import { default as videosConstants } from '@/constants/assets/videosConstants.j
 import './index.scss'
 
 const Reel = ({ sectionRef }: { sectionRef: React.RefObject<HTMLDivElement> }) => {
-  const svgRef = useRef<SVGSVGElement>(null!)
+  const svgRef = useRef<HTMLDivElement>(null!)
   const initialContainerRef = useRef<HTMLDivElement>(null!)
   const targetContainerRef = useRef<HTMLDivElement>(null!)
+  const reelCanvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    const svg = svgRef.current
+    // const svg = svgRef.current
+    const canvas = reelCanvasRef.current
     const section = sectionRef.current
     const initialContainer = initialContainerRef.current
     const targetContainer = targetContainerRef.current
 
-    if (!svg || !initialContainer || !targetContainer || !section) return
+    if (!canvas || !initialContainer || !targetContainer || !section) return
 
     const initAnimation = () => {
       const sectionBCR = section.getBoundingClientRect()
@@ -31,7 +33,7 @@ const Reel = ({ sectionRef }: { sectionRef: React.RefObject<HTMLDivElement> }) =
       const endX = targetContainerBCR.left
       const endY = targetContainerBCR.top - sectionBCR.top
 
-      gsap.set(svg, {
+      gsap.set(canvas, {
         top: startY,
         left: startX,
         width: initialContainerBCR.width,
@@ -40,49 +42,44 @@ const Reel = ({ sectionRef }: { sectionRef: React.RefObject<HTMLDivElement> }) =
         display: 'block',
       })
 
-      ScrollTrigger.create({
+      const trigger = ScrollTrigger.create({
         trigger: section,
         start: 'top top',
         end: 'bottom bottom',
         scrub: 1,
-        markers: true,
+        markers: true, // Remove in production!
         onUpdate: (self) => {
           const progress = self.progress
-
-          const currentX = startX + (endX - startX) * progress
-          const currentY = startY + (endY - startY) * progress
-
-          const currentWidth =
-            initialContainerBCR.width +
-            (targetContainerBCR.width - initialContainerBCR.width) * progress
-          const currentHeight =
-            initialContainerBCR.height +
-            (targetContainerBCR.height - initialContainerBCR.height) * progress
-
-          gsap.to(svg, {
-            top: currentY,
-            left: currentX,
-            width: currentWidth,
-            height: currentHeight,
+          gsap.to(canvas, {
+            top: startY + (endY - startY) * progress,
+            left: startX + (endX - startX) * progress,
+            width:
+              initialContainerBCR.width +
+              (targetContainerBCR.width - initialContainerBCR.width) * progress,
+            height:
+              initialContainerBCR.height +
+              (targetContainerBCR.height - initialContainerBCR.height) * progress,
             duration: 0.1,
             overwrite: true,
           })
         },
       })
+
+      return trigger
     }
 
+    let trigger: ScrollTrigger | undefined
     const onResize = () => {
-      ScrollTrigger.getAll().forEach((t) => t.kill())
-      initAnimation()
+      trigger?.kill()
+      trigger = initAnimation()
     }
 
     window.addEventListener('resize', onResize)
-    const timeout = setTimeout(initAnimation, 100)
+    trigger = initAnimation()
 
     return () => {
-      clearTimeout(timeout)
+      trigger?.kill()
       window.removeEventListener('resize', onResize)
-      ScrollTrigger.getAll().forEach((t) => t.kill())
     }
   }, [sectionRef])
 
@@ -112,20 +109,21 @@ const Reel = ({ sectionRef }: { sectionRef: React.RefObject<HTMLDivElement> }) =
             style={{
               width: '100%',
               height: '100%',
-              objectFit: 'contain',
+              // objectFit: 'contain',
+              objectFit: 'fill',
               objectPosition: 'center',
               display: 'block',
             }}
           >
             <source
               src={videosConstants.REEL}
-              type='video/mp4'
+              type='video/webm'
             />
           </video>
         </foreignObject>
       </svg> */}
-
-      <ReelCanvas />
+      
+      <ReelCanvas ref={reelCanvasRef} />
 
       <div
         ref={initialContainerRef}
@@ -139,7 +137,6 @@ const Reel = ({ sectionRef }: { sectionRef: React.RefObject<HTMLDivElement> }) =
         id='target-container'
         className='reel-container'
       >
-        Second Container
       </div>
     </>
   )

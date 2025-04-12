@@ -47,7 +47,7 @@ export default function DeformedSVG({ svgUrl }: { svgUrl: string }) {
   const uniforms = useRef({
     uTime: { value: 0 },
     uIntensity: { value: 0.3 },
-    uColor: { value: new THREE.Color(0.2, 0.5, 0.8) }
+    uColor: { value: new THREE.Color(0.2, 0.5, 0.8) },
   })
 
   // Load and parse SVG
@@ -56,10 +56,10 @@ export default function DeformedSVG({ svgUrl }: { svgUrl: string }) {
     loader.load(svgUrl, (data) => {
       const paths = data.paths
       const group = new THREE.Group()
-      
+
       paths.forEach((path) => {
         const shapes = SVGLoader.createShapes(path)
-        
+
         shapes.forEach((shape) => {
           // Extrude the SVG shape
           /* const geometry = new THREE.ExtrudeGeometry(shape, {
@@ -67,33 +67,33 @@ export default function DeformedSVG({ svgUrl }: { svgUrl: string }) {
             bevelEnabled: false,
             steps: 1
           }) */
-          const geometry = new THREE.ShapeGeometry(shape);
-          geometry.rotateX(Math.PI);
-          
+          const geometry = new THREE.ShapeGeometry(shape)
+          geometry.rotateX(Math.PI)
+
           // Center the geometry
           geometry.center()
-          
+
           // Store original positions for animation
           const positionAttribute = geometry.attributes.position
           const originalPositions = positionAttribute.array.slice()
           geometry.setAttribute('originalPosition', new THREE.BufferAttribute(originalPositions, 3))
-          
+
           const material = new THREE.ShaderMaterial({
             vertexShader,
             fragmentShader,
             uniforms: uniforms.current,
-            side: THREE.DoubleSide
+            side: THREE.DoubleSide,
           })
-          
+
           const mesh = new THREE.Mesh(geometry, material)
           group.add(mesh)
         })
       })
-      
+
       // Scale and position the group
       group.scale.set(0.1, 0.1, 0.1)
       group.position.set(0, 0, 0)
-      
+
       if (meshRef.current) {
         meshRef.current.add(group)
       }

@@ -17,7 +17,7 @@ export default function Introduction() {
     >
       <Content />
       <Reel sectionRef={introductionSectionRef} />
-      <ParisMetroMap />
+      {/* <ParisMetroMap /> */}
     </section>
   )
 

@@ -11,8 +11,8 @@ export function cameraDefaultValues({ terminalType }: TCameraDefaultValuesSignat
       position:
         terminalType === 'isDesktop'
           ? new THREE.Vector3(-0.1, 0, 1.75)
-          // ? new THREE.Vector3(-0.1, 0.3, 2.25)
-          : new THREE.Vector3(0.075, 0, 2.5),
+          : // ? new THREE.Vector3(-0.1, 0.3, 2.25)
+            new THREE.Vector3(0.075, 0, 2.5),
       fov: 50,
       near: 0.01,
       far: 10,
