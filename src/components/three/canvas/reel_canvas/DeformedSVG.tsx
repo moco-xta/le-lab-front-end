@@ -24,7 +24,6 @@ const vertexShader = `
   }
 `
 
-// Fragment Shader - Handles coloring
 const fragmentShader = `
   varying vec2 vUv;
   varying vec3 vNormal;
@@ -63,11 +62,13 @@ export default function DeformedSVG({ svgUrl }: { svgUrl: string }) {
         
         shapes.forEach((shape) => {
           // Extrude the SVG shape
-          const geometry = new THREE.ExtrudeGeometry(shape, {
-            depth: 0.1,
+          /* const geometry = new THREE.ExtrudeGeometry(shape, {
+            depth: 1,
             bevelEnabled: false,
             steps: 1
-          })
+          }) */
+          const geometry = new THREE.ShapeGeometry(shape);
+          geometry.rotateX(Math.PI);
           
           // Center the geometry
           geometry.center()
@@ -90,7 +91,7 @@ export default function DeformedSVG({ svgUrl }: { svgUrl: string }) {
       })
       
       // Scale and position the group
-      group.scale.set(0.01, 0.01, 0.01)
+      group.scale.set(0.1, 0.1, 0.1)
       group.position.set(0, 0, 0)
       
       if (meshRef.current) {

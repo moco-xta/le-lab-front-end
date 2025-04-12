@@ -8,6 +8,7 @@
     }
   },
   "SVG": {
-    "REEL": "/img/svg/reel_path.svg"
+    "REEL": "/img/svg/reel_path.svg",
+    "REEL_DEFORM": "/img/svg/reel_path_DEFORM_EXPORT.svg"
   }
 }
