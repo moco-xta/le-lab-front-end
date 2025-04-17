@@ -1,6 +1,6 @@
 import React from 'react'
 
-import LastProjectsTitleBar from './title'
+import LastProjectsTitleBar from './title_bar'
 
 import './index.scss'
 

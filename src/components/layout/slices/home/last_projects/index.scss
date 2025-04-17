@@ -1,6 +1,9 @@
 #last-projects-section {
   position: relative;
   width: 100%;
-  height: 100vh;
+  margin-top: 10vh;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: $gap_S;
   padding: $base-padding-y $base-padding-x;
 }

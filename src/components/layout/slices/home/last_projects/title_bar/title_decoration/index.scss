@@ -1,0 +1,23 @@
+#last-projects-title-decoration {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: $base-padding-x;
+  margin-right: $base-padding-x;
+  padding-top: 20px;
+  display: block;
+  font-size: 0.9vw;
+  line-height: 1.4;
+  text-transform: uppercase;
+
+  .last-projects-title-decoration-line-wrapper {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
+    .last-projects-title-decoration-line {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(100%);
+      will-change: transform;
+    }
+  }
+}

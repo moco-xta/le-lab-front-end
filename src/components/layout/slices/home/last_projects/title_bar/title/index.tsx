@@ -7,7 +7,7 @@ import { splitTextToCharacters } from '@/helpers/textHelpers'
 
 import './index.scss'
 
-export default function LastProjectsTitleBar() {
+export default function LastProjectsTitle() {
   const t = useTranslations('HOME.LAST_PROJECTS')
 
   const containerRef = useRef<HTMLDivElement>(null!)
@@ -32,23 +32,19 @@ export default function LastProjectsTitleBar() {
   )
 
   return (
-    <div
+    <h2
       ref={containerRef}
-      id='last-projects-title-bar'
+      id='last-projects-title'
+      className='section-title'
     >
-      <h2
-        id='last-projects-title'
-        className='section-title'
-      >
-        {splitTextToCharacters(t('SECTION_TITLE')).map((letter, index) => (
-          <span
-            key={`last_projects_title_character_${index}`}
-            className='last-projects-title-character'
-          >
-            {letter !== ' ' ? letter : '\u00A0'}
-          </span>
-        ))}
-      </h2>
-    </div>
+      {splitTextToCharacters(t('SECTION_TITLE')).map((letter, index) => (
+        <span
+          key={`last_projects_title_character_${index}`}
+          className='last-projects-title-character'
+        >
+          {letter !== ' ' ? letter : '\u00A0'}
+        </span>
+      ))}
+    </h2>
   )
 }
