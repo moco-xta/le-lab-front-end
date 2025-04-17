@@ -1,0 +1,14 @@
+#last-projects-title-bar {
+  position: absolute;
+  width: fit-content;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  will-change: transform;
+  overflow: hidden;
+
+  .last-projects-title-character {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(100%) rotateZ(30deg);
+    will-change: transform;
+  }
+}
