@@ -1,0 +1,8 @@
+#last-projects-cards {
+  position: relative;
+  margin-top: calc(10.35px * 20);
+  grid-column: 1 / span 12;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: $gap_S;
+}

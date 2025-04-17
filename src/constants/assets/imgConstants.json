@@ -7,6 +7,9 @@
       "PEPPERMINT_POWERPLANT_2_1K": "/img/environments/hdr/peppermint_powerplant_2_1k.hdr"
     }
   },
+  "PROJECTS": {
+    "MOCO_XTA": "/img/projects/moco_xta.jpg"
+  },
   "SVG": {
     "REEL": "/img/svg/reel_path.svg",
     "REEL_DEFORM": "/img/svg/reel_path_DEFORM_EXPORT.svg"
