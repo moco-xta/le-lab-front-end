@@ -7,7 +7,7 @@ import ProjectCardScene from './ProjectCardScene'
 import { canvasDefaultValues } from '@/data/three/canvas/project_card_canvas/canvasData'
 import { cameraDefaultValues } from '@/data/three/canvas/project_card_canvas/cameraData'
 
-export default function ProjectCardCanvas({ index }: { index: number }) {
+export default function ProjectCardCanvas({ index, textureUrl }: { index: number, textureUrl: string }) {
   return (
     <Canvas
       id={`last-project-canvas-${index}`}
@@ -20,7 +20,7 @@ export default function ProjectCardCanvas({ index }: { index: number }) {
           camera.updateMatrixWorld()
         }}
       />
-      <ProjectCardScene />
+      <ProjectCardScene index={index} textureUrl={textureUrl} />
     </Canvas>
   )
 }

@@ -10,6 +10,16 @@ const withNextIntl = createNextIntlPlugin()
 
 /** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
+  experimental: {
+    turbo: {
+      rules: {
+        "**/src/components/three/shaders/project_card/*.glsl": {
+          loaders: ["raw-loader"],
+          as: "*.js",
+        },
+      },
+    },
+  },
   productionBrowserSourceMaps: false,
   reactStrictMode: true,
   sassOptions: {
@@ -18,29 +28,19 @@ const nextConfig: NextConfig = {
   },
   transpilePackages: ['three'],
   webpack: (config) => {
+    console.log('Webpack configuration is being applied!');
     config.experiments = { asyncWebAssembly: true }
     config.module.rules.push(
       {
-        test: /\.(glsl|frag|vert)$/,
+        test: /\.(glsl|vs|fs|vert|frag)$/,
         use: ['raw-loader'],
       },
       {
         test: /\.svg$/,
-        use: ['@svgr/webpack'],
+        use: [{ loader: '@svgr/webpack' }],
       },
     )
     return config
-  },
-  experimental: {
-    turbo: {
-      rules: {
-        '*.glsl': ['asset/source'],
-        '*.vs': ['asset/source'],
-        '*.fs': ['asset/source'],
-        '*.vert': ['asset/source'],
-        '*.frag': ['asset/source'],
-      },
-    },
   },
 }
 

@@ -14,6 +14,7 @@ export default function LastProjectsCards() {
           <ProjectCard
             key={`last-projects-card-${index}`}
             index={index}
+            project={project}
           />
         )
       })}

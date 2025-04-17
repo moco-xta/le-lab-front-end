@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export default function useIsSmallScreen(breakpointVar: string) {
+export default function useIsSmallScreen(breakpointVar: string): boolean {
   const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false)
 
   useEffect(() => {
