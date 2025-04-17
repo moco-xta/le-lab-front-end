@@ -1,4 +1,4 @@
-import { MutableRefObject, useEffect, useRef, useState } from 'react'
+import { RefObject, useEffect, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { useFrame, useThree } from '@react-three/fiber'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
@@ -41,8 +41,8 @@ const fragmentShader = `
 
 function addObjects(
   scene: THREE.Scene,
-  meshRef: MutableRefObject<THREE.Mesh>,
-  materialRef: MutableRefObject<THREE.ShaderMaterial>,
+  meshRef: RefObject<THREE.Mesh>,
+  materialRef: RefObject<THREE.ShaderMaterial>,
 ) {
   // const geometry = new THREE.PlaneGeometry(1, 1, 10, 10)
 
@@ -69,7 +69,7 @@ export default function PlaygroundScene() {
 
   const [isLoaded, setIsLoaded] = useState<boolean>(false)
 
-  const meshRef = useRef<THREE.Mesh>(null)
+  const meshRef = useRef<THREE.Mesh>(null!)
   const materialRef = useRef<THREE.ShaderMaterial>(
     new THREE.ShaderMaterial({
       uniforms: {

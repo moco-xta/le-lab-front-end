@@ -58,12 +58,12 @@ function addObjects(
       const modelAspect = modelSize.x / modelSize.y
 
       let scale: number
-      
+
       if (camera instanceof THREE.OrthographicCamera) {
         // For orthographic camera
         const visibleHeight = 2 // Camera covers -1 to 1 (2 units)
         const visibleWidth = visibleHeight * canvasAspect
-        
+
         // Determine which dimension to scale by
         if (modelAspect > canvasAspect) {
           // Model is wider than canvas - scale by width
@@ -75,7 +75,7 @@ function addObjects(
         model.scale.set(scale, scale, scale)
         const center = box.getCenter(new THREE.Vector3())
         model.position.sub(center.multiplyScalar(scale))
-        
+
         // Update camera
         camera.left = -visibleWidth / 2
         camera.right = visibleWidth / 2
@@ -83,13 +83,13 @@ function addObjects(
         camera.bottom = -visibleHeight / 2
         camera.updateProjectionMatrix()
       }
-      
+
       if (camera instanceof THREE.PerspectiveCamera) {
         const distance = camera.position.z
         const fov = camera.fov * (Math.PI / 180)
         const visibleHeight = 2 * Math.tan(fov / 2) * distance
         const visibleWidth = visibleHeight * canvasAspect
-        
+
         if (modelAspect > canvasAspect) {
           scale = visibleWidth / modelSize.x
         } else {

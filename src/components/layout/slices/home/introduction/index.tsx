@@ -3,12 +3,15 @@ import React, { useRef } from 'react'
 import Content from './content'
 import Reel from './reel'
 import ParisMetroMap from './paris_metro_map'
-
+import ReelCanvas from '@/components/three/canvas/reel_canvas/ReelCanvas'
+import PixiVideoWarp from './reel/pixi_video_warp'
 import './index.scss'
 
 export default function Introduction() {
   const introductionSectionRef = useRef<HTMLDivElement>(null!)
-  /* return <Reel /> */
+  /* return <ReelCanvas /> */
+
+  /* return <PixiVideoWarp /> */
 
   return (
     <section
@@ -16,8 +19,8 @@ export default function Introduction() {
       ref={introductionSectionRef}
     >
       <Content />
-      <Reel sectionRef={introductionSectionRef} />
-      {/* <ParisMetroMap /> */}
+      {/* <Reel sectionRef={introductionSectionRef} /> */}
+      <ParisMetroMap />
     </section>
   )
 

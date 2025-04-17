@@ -12,7 +12,7 @@ const Reel = ({ sectionRef }: { sectionRef: React.RefObject<HTMLDivElement> }) =
   const svgRef = useRef<HTMLDivElement>(null!)
   const initialContainerRef = useRef<HTMLDivElement>(null!)
   const targetContainerRef = useRef<HTMLDivElement>(null!)
-  const reelCanvasRef = useRef<HTMLCanvasElement>(null);
+  const reelCanvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
     // const svg = svgRef.current
@@ -122,10 +122,10 @@ const Reel = ({ sectionRef }: { sectionRef: React.RefObject<HTMLDivElement> }) =
           </video>
         </foreignObject>
       </svg> */}
-      
+
       <ReelCanvas ref={reelCanvasRef} />
 
-      <div
+      {/* <div
         ref={initialContainerRef}
         id='initial-container'
         className='reel-container'
@@ -136,8 +136,7 @@ const Reel = ({ sectionRef }: { sectionRef: React.RefObject<HTMLDivElement> }) =
         ref={targetContainerRef}
         id='target-container'
         className='reel-container'
-      >
-      </div>
+      ></div> */}
     </>
   )
 }
