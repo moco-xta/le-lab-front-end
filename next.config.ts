@@ -13,9 +13,9 @@ const nextConfig: NextConfig = {
   experimental: {
     turbo: {
       rules: {
-        "**/src/components/three/shaders/project_card/*.glsl": {
-          loaders: ["raw-loader"],
-          as: "*.js",
+        '**/src/components/three/shaders/project_card/*.glsl': {
+          loaders: ['raw-loader'],
+          as: '*.js',
         },
       },
     },
@@ -28,7 +28,7 @@ const nextConfig: NextConfig = {
   },
   transpilePackages: ['three'],
   webpack: (config) => {
-    console.log('Webpack configuration is being applied!');
+    console.log('Webpack configuration is being applied!')
     config.experiments = { asyncWebAssembly: true }
     config.module.rules.push(
       {

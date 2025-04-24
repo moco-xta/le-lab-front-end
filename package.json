@@ -48,7 +48,6 @@
     "prettier": "^3.5.3",
     "raw-loader": "^4.0.2",
     "rimraf": "^6.0.1",
-    "text-loader": "^0.0.1",
     "typescript": "^5"
   }
 }

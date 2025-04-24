@@ -33,7 +33,7 @@ export const projectsData: IProjectData[] = [
     key: 'lento',
     name: 'Lento.eu',
     url: 'https://lento.eu/en',
-    imageUrl: imgConstants.PROJECTS.MOCO_XTA,
+    imageUrl: imgConstants.PROJECTS.LENTO,
     descriptionsKey: 'DESCRIPTIONS.LENTO',
     dates: {
       to: '2023-02-28',

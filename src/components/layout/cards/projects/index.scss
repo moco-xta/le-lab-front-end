@@ -1,0 +1,71 @@
+/* .project-card {
+  position: relative;
+  float: left;
+  grid-column: span 6 / span 6;
+  display: grid;
+  grid-template-columns: repeat(16, minmax(0, 1fr));
+  grid-template-rows: repeat(11, minmax(0, 1fr));
+  cursor: pointer;
+  pointer-events: auto;
+  margin-top: -60px;
+
+  .project-card-info {
+    position: relative;
+    width: 100%;
+  }
+}
+
+.project_card:hover {
+  .project-card-name-container {
+    transform: translateX(0px);
+    transition:
+      letter-spacing 0.3s ease-in-out,
+      transform 0.3s ease-in-out;
+
+    .project-card-name {
+      // transform: translateX(50px);
+
+      .project-card-name-item {
+        .project-card-name-character {
+          // transform: translateX(120px);
+          animation: letterSpacingAnimation 0.6s ease-in-out;
+        }
+      }
+    }
+  }
+}
+ */
+
+.project-card {
+  box-sizing: border-box;
+  grid-column: span 6 / span 6;
+  display: grid;
+  grid-template-columns: repeat(16, minmax(0, 1fr));
+  grid-template-rows: repeat(10, minmax(0, 1fr));
+  cursor: pointer;
+  pointer-events: auto;
+  grid-gap: 2px; /* This creates the visible grid lines */
+  // background-color: yellow;
+
+  .project-card-canvas {
+    box-sizing: border-box;
+    grid-column: 1 / span 16;
+    grid-row: 1 / span 8;
+    width: 100% !important;
+    height: 100% !important;
+    aspect-ratio: 16 / 9;
+    // background-color: blue;
+  }
+}
+
+.project-card-info-left {
+  margin-left: 3.5vw;
+}
+
+.project-card-info-right {
+  margin-left: 0.5vw;
+}
+
+.project-card-small-screen {
+  margin-left: 4vw;
+}
